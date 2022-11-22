@@ -1,0 +1,48 @@
+header {
+  $side-space: 0.750em; // 12px
+  @include flex-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: $header-height; // 8em 128px
+  padding: {
+    right: $side-space;
+    left: $side-space;
+  }
+  border: {
+    bottom-left-radius: $radius-default;
+    bottom-right-radius: $radius-default;
+  }
+  background-color: $color-primary;
+
+  h1 {
+    color: #f3f6fe;
+    font: {
+      size: 3.038rem; // 48.608px
+      weight: 600;
+    }
+    letter-spacing: 0.03em;
+    span {
+      padding-right: 0.247em; // 12px
+      color: #7c9bfe;
+      font-weight: 300;
+      letter-spacing: 0;
+    }
+  }
+
+  button {
+    align-self: stretch;
+    width: 8.000em; // 128px
+    color: #edefff;
+    i {
+      font-size: 3.875rem; // 62px
+    }
+  }
+}
+
+// exception
+.main header {
+  border-radius: 0;
+}

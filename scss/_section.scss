@@ -1,0 +1,71 @@
+section {
+  @include flex-column;
+  flex-grow: 1;
+  min-width: 960px;
+  margin-top: $header-height; // 8em 128px
+  padding: $global-space;
+  overflow: auto;
+}
+
+// exception
+.main section {
+  padding: 0;
+}
+
+.main-area {
+  @include flex-column;
+  height: 47.625em; // 762px
+
+  .main-contents-wrap {
+    background-color: $color-primary-deep;
+  }
+
+  .main-contents {
+    position: relative;
+    flex-grow: 1;
+    border: {
+      bottom-left-radius: $radius-main;
+      bottom-right-radius: $radius-main;
+    }
+    background-color: $color-primary;
+
+    &:after {
+      @include pseudo-before;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: $color-primary-deep;
+      z-index: -1;
+    }
+  }
+
+  .guide-contents {
+    height: 10em; // 160px
+    border: {
+      bottom-left-radius: $radius-main;
+      bottom-right-radius: $radius-main;
+    }
+    background-color: $color-primary-deep;
+
+    button {
+      @include flex-center;
+      color: #798af2;
+      font: {
+        size: 2.604rem; // 41.664px
+        weight: 700;
+      }
+      .click {
+        @include en;
+        height: 1.8em; // 50px
+        margin-left: 1.008em; // 28px
+        background-color: $color-yellow;
+        color: $color-primary-deep;
+        font: {
+          size: 1.736rem; // 27.776px
+          weight: 500;
+        }
+      }
+    }
+  }
+}
