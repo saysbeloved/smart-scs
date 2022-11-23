@@ -198,19 +198,9 @@ button {
   letter-spacing: -0.03em;
 }
 
-html,
 body {
-  overflow-y: hidden;
+  overflow: hidden;
   height: 100vh;
-}
-html.extract-boomup-targets,
-body.extract-boomup-targets {
-  overflow-x: hidden;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
   background-color: #f1f4f9;
 }
 
@@ -1056,8 +1046,6 @@ header button i {
 section {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  min-width: 960px;
   margin-top: 8em;
   padding: 5em;
   overflow: auto;
@@ -1210,6 +1198,7 @@ section {
 }
 
 .flyout-guide {
+  display: none;
   position: absolute;
   top: 10em;
   right: 0;
@@ -1270,4 +1259,7 @@ section {
 }
 .flyout-guide .how-to li:nth-child(2)::before {
   content: "02";
+}
+.flyout-guide.active {
+  display: block;
 }

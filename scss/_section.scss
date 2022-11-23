@@ -1,7 +1,5 @@
 section {
   @include flex-column;
-  flex-grow: 1;
-  min-width: 960px;
   margin-top: $header-height; // 8em 128px
   padding: $global-space;
   overflow: auto;

@@ -1,5 +1,6 @@
 // flyout type
 @mixin flyout {
+  display: none;
   position: absolute;
   top: 10em;
   right: 0;
@@ -47,7 +48,7 @@
 
 .flyout-guide {
   @include flyout;
-
+  
   .how-to {
     li {
       position: relative;
@@ -76,5 +77,8 @@
         content: '02';
       }
     }
+  }
+  &.active {
+    display: block;
   }
 }

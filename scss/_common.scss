@@ -213,17 +213,9 @@ button {
   letter-spacing: -0.03em;
 }
 
-html,
 body {
-  overflow-y: hidden;
+  overflow: hidden;
   height: 100vh;
-  &.extract-boomup-targets {
-    overflow-x: hidden;
-  }
-}
-
-body {
-  @include flex-column;
   background-color: $color-bg;
 }
 
