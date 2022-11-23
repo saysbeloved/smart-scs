@@ -12,21 +12,16 @@ section {
   padding: 0;
 }
 
+// main
 .main-area {
   @include flex-column;
-  height: 47.625em; // 762px
-
-  .main-contents-wrap {
-    background-color: $color-primary-deep;
-  }
+  min-height: 47.625em; // 762px
 
   .main-contents {
+    @include flex-column;
+    @include main-radius;
     position: relative;
     flex-grow: 1;
-    border: {
-      bottom-left-radius: $radius-main;
-      bottom-right-radius: $radius-main;
-    }
     background-color: $color-primary;
 
     &:after {
@@ -38,14 +33,91 @@ section {
       background-color: $color-primary-deep;
       z-index: -1;
     }
+
+    .safety-check-area {
+      padding-bottom: 6.125em; // 98px
+      text-align: center;
+      button {
+        $size: 1.56em;
+        height: 2.4em; // 200px
+        padding: {
+          left: $size;
+          right: $size;
+        }
+        // background-color: $color-secondary;
+        background: repeating-conic-gradient(
+            rgba(0, 0, 0, 0) 0.000045%,
+            rgba(143, 193, 227, 0.8666666667) 0.0005%
+          ),
+          linear-gradient(#54abe7, #54abe7);
+        background-blend-mode: soft-light;
+        color: #fafdff;
+        font: {
+          size: 5.208em; // 83.328px
+          weight: 700;
+        }
+        box-shadow: 0 40px 50px 10px rgb(30 44 126 / 0.6);
+
+        span {
+          padding-right: 0.192em; // 16px
+          font-weight: 100;
+          letter-spacing: -0.05em;
+        }
+      }
+    }
+  }
+
+  .weather-area {
+    @include flex-grow;
+    display: flex;
+    padding: {
+      top: 3.75em; // 60px
+      left: 3.75em; // 60px
+      right: $global-space;
+      bottom: 6.25em; // 100px
+    }
+    .info {
+      padding: {
+        top: 0.938em; // 15px
+        left: 0.625em; // 10px
+      }
+      &-date {
+        @include en;
+        padding-bottom: 0.360em; // 10px
+        color: #94a0f4;
+        font: {
+          size: 1.736rem;
+          weight: 500;
+        }
+        .date {
+          padding-right: 0.288em; // 8px
+        }
+      }
+      &-weather {
+        color: #d1d5f2;
+        font: {
+          size: 1.953rem;
+          weight: 700;
+        }
+        .location,
+        .celsius-mark {
+          padding-right: 0.32em; // 10px
+        }
+        .degree,
+        .celsius-mark {
+          font: {
+            size: 2.17rem;
+            weight: 600;
+          }
+        }
+      }
+    }
   }
 
   .guide-contents {
+    @include main-radius;
     height: 10em; // 160px
-    border: {
-      bottom-left-radius: $radius-main;
-      bottom-right-radius: $radius-main;
-    }
+    min-height: 80px;
     background-color: $color-primary-deep;
 
     button {
@@ -57,15 +129,38 @@ section {
       }
       .click {
         @include en;
+        position: relative;
         height: 1.8em; // 50px
         margin-left: 1.008em; // 28px
+        padding: {
+          left: 1.08em; // 30px
+          right: 3.168em; // 88px
+        }
         background-color: $color-yellow;
         color: $color-primary-deep;
         font: {
           size: 1.736rem; // 27.776px
           weight: 500;
         }
+
+        &:before {
+          @include pseudo-before;
+          @include icon('ico-tap.png', 2.232em);
+          right: 0.648em; // 18px
+          top: 0.108em; // 3px
+          transform: rotate(-30deg);
+        }
       }
     }
   }
 }
+
+.news-area {
+  @include flex-grow;
+  padding: $global-space;
+  img {
+    width: 100%;
+    border-radius: $radius-default;
+  }
+}
+// /main

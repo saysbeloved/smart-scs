@@ -289,51 +289,6 @@ a:hover, a:focus, a:active, a:visited {
 .btn.round {
   border-radius: 9999px;
 }
-.btn.icon-with-24 {
-  padding-left: 2.857em;
-}
-.btn.icon-with-24.setting {
-  background-image: url("./../images/icon-setting.png");
-  background-repeat: no-repeat;
-  background-position: 1em 50%;
-  background-size: 1.714em 1.714em;
-}
-.btn.icon-with-24.download {
-  background-image: url("./../images/icon-down.png");
-  background-repeat: no-repeat;
-  background-position: 1em 50%;
-  background-size: 1.714em 1.714em;
-}
-.btn.icon-with-24.save {
-  background-image: url("./../images/icon-save.png");
-  background-repeat: no-repeat;
-  background-position: 1em 50%;
-  background-size: 1.714em 1.714em;
-}
-.btn.icon-with-24.modify {
-  background-image: url("./../images/icon-pencil.png");
-  background-repeat: no-repeat;
-  background-position: 1em 50%;
-  background-size: 1.714em 1.714em;
-}
-.btn.icon-with-24.generate {
-  background-image: url("./../images/icon-pencil-light.png");
-  background-repeat: no-repeat;
-  background-position: 1em 50%;
-  background-size: 1.714em 1.714em;
-}
-.btn.icon-with-24.delete {
-  background-image: url("./../images/icon-delete.png");
-  background-repeat: no-repeat;
-  background-position: 1em 50%;
-  background-size: 1.714em 1.714em;
-}
-.btn.icon-with-24.reset {
-  background-image: url("./../images/icon-reset-light.png");
-  background-repeat: no-repeat;
-  background-position: 1em 50%;
-  background-size: 1.714em 1.714em;
-}
 .btn:disabled {
   background-color: #e1e1e4;
   color: #fff;
@@ -729,23 +684,6 @@ input[type=checkbox]:disabled::before {
   right: 0.857em;
 }
 
-.icon-only.grid-data-add {
-  width: 1.714em;
-  height: 1.714em;
-  background-image: url("./../images/icon-add-circle.png");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 1.714em 1.714em;
-}
-.icon-only.grid-data-delete {
-  width: 1.714em;
-  height: 1.714em;
-  background-image: url("./../images/icon-minus-circle.png");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 1.714em 1.714em;
-}
-
 .ico {
   position: relative;
 }
@@ -1087,12 +1025,13 @@ header h1 {
   font-size: 3.038rem;
   font-weight: 600;
   letter-spacing: 0.03em;
+  cursor: default;
 }
 header h1 span {
+  letter-spacing: 0;
   padding-right: 0.247em;
   color: #7c9bfe;
   font-weight: 300;
-  letter-spacing: 0;
 }
 header button {
   align-self: stretch;
@@ -1124,16 +1063,15 @@ section {
 .main-area {
   display: flex;
   flex-direction: column;
-  height: 47.625em;
-}
-.main-area .main-contents-wrap {
-  background-color: #1e2c7e;
+  min-height: 47.625em;
 }
 .main-area .main-contents {
-  position: relative;
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
+  position: relative;
+  flex-grow: 1;
   background-color: #3645b1;
 }
 .main-area .main-contents:after {
@@ -1147,10 +1085,69 @@ section {
   background-color: #1e2c7e;
   z-index: -1;
 }
+.main-area .main-contents .safety-check-area {
+  padding-bottom: 6.125em;
+  text-align: center;
+}
+.main-area .main-contents .safety-check-area button {
+  height: 2.4em;
+  padding-left: 1.56em;
+  padding-right: 1.56em;
+  background: repeating-conic-gradient(rgba(0, 0, 0, 0) 0.000045%, rgba(143, 193, 227, 0.8666666667) 0.0005%), linear-gradient(#54abe7, #54abe7);
+  background-blend-mode: soft-light;
+  color: #fafdff;
+  font-size: 5.208em;
+  font-weight: 700;
+  box-shadow: 0 40px 50px 10px rgba(30, 44, 126, 0.6);
+}
+.main-area .main-contents .safety-check-area button span {
+  padding-right: 0.192em;
+  font-weight: 100;
+  letter-spacing: -0.05em;
+}
+.main-area .weather-area {
+  flex-basis: auto;
+  flex-grow: 1;
+  justify-content: flex-start;
+  display: flex;
+  padding-top: 3.75em;
+  padding-left: 3.75em;
+  padding-right: 5em;
+  padding-bottom: 6.25em;
+}
+.main-area .weather-area .info {
+  padding-top: 0.938em;
+  padding-left: 0.625em;
+}
+.main-area .weather-area .info-date {
+  letter-spacing: 0;
+  padding-bottom: 0.36em;
+  color: #94a0f4;
+  font-size: 1.736rem;
+  font-weight: 500;
+}
+.main-area .weather-area .info-date .date {
+  padding-right: 0.288em;
+}
+.main-area .weather-area .info-weather {
+  color: #d1d5f2;
+  font-size: 1.953rem;
+  font-weight: 700;
+}
+.main-area .weather-area .info-weather .location,
+.main-area .weather-area .info-weather .celsius-mark {
+  padding-right: 0.32em;
+}
+.main-area .weather-area .info-weather .degree,
+.main-area .weather-area .info-weather .celsius-mark {
+  font-size: 2.17rem;
+  font-weight: 600;
+}
 .main-area .guide-contents {
-  height: 10em;
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
+  height: 10em;
+  min-height: 80px;
   background-color: #1e2c7e;
 }
 .main-area .guide-contents button {
@@ -1165,10 +1162,38 @@ section {
 }
 .main-area .guide-contents button .click {
   letter-spacing: 0;
+  position: relative;
   height: 1.8em;
   margin-left: 1.008em;
+  padding-left: 1.08em;
+  padding-right: 3.168em;
   background-color: #f7d63b;
   color: #1e2c7e;
   font-size: 1.736rem;
   font-weight: 500;
+}
+.main-area .guide-contents button .click:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 2.232em;
+  height: 2.232em;
+  background-image: url("./../images/ico-tap.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 2.232em 2.232em;
+  right: 0.648em;
+  top: 0.108em;
+  transform: rotate(-30deg);
+}
+
+.news-area {
+  flex-basis: auto;
+  flex-grow: 1;
+  justify-content: flex-start;
+  padding: 5em;
+}
+.news-area img {
+  width: 100%;
+  border-radius: 40px;
 }

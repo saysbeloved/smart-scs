@@ -1,6 +1,7 @@
 header {
-  $side-space: 0.750em; // 12px
   @include flex-between;
+  $side-space: 0.750em; // 12px
+
   position: fixed;
   top: 0;
   left: 0;
@@ -25,11 +26,12 @@ header {
     }
     letter-spacing: 0.03em;
     span {
+      @include en;
       padding-right: 0.247em; // 12px
       color: #7c9bfe;
       font-weight: 300;
-      letter-spacing: 0;
     }
+    cursor: default;
   }
 
   button {

@@ -133,10 +133,18 @@ $min-xlarge: 'screen and (min-width: 1920px)';
   font-size: 1rem;
 }
 
+// main radius
+@mixin main-radius {
+  border: {
+    bottom-left-radius: $radius-main;
+    bottom-right-radius: $radius-main;
+  }
+}
+
 // common variable style
 //
-$global-space: 5.000em; // 80px
-$header-height: 8.000em; // 128px
+$global-space: 5em; // 80px
+$header-height: 8em; // 128px
 
 $menu-height: 4.571em;
 $filter-bar-height: 4.857rem; // 68px
@@ -171,34 +179,16 @@ $box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
 $box-shadow-modal: 0 2px 10px 0 rgba(0, 0, 0, 0.18);
 
 @mixin icon($name, $size) {
-  background: {
-    image: image-path($name);
-    repeat: no-repeat;
-    position: 0 50%;
-    size: $size $size; // 24px 1.714em / 16px 1.143em
-  }
-}
-
-@mixin icon-only($name, $size) {
   width: $size;
   height: $size;
   background: {
     image: image-path($name);
     repeat: no-repeat;
     position: 50% 50%;
-    size: $size $size; // 24px 1.714em / 16px 1.143em
+    size: $size $size;
   }
 }
 
-@mixin icon-with-24($name) {
-  $size: 1.714em;
-  background: {
-    image: image-path($name);
-    repeat: no-repeat;
-    position: 1em 50%; // 14px
-    size: $size $size; // 24px
-  }
-}
 
 // common
 html,
@@ -320,35 +310,6 @@ a {
     border-radius: $radius-round;
   }
 
-  &.icon-with {
-    &-24 {
-      padding: {
-        left: 2.857em; // 40px
-      }
-
-      &.setting {
-        @include icon-with-24('icon-setting.png');
-      }
-      &.download {
-        @include icon-with-24('icon-down.png');
-      }
-      &.save {
-        @include icon-with-24('icon-save.png');
-      }
-      &.modify {
-        @include icon-with-24('icon-pencil.png');
-      }
-      &.generate {
-        @include icon-with-24('icon-pencil-light.png');
-      }
-      &.delete {
-        @include icon-with-24('icon-delete.png');
-      }
-      &.reset {
-        @include icon-with-24('icon-reset-light.png');
-      }
-    }
-  }
 
   &:disabled {
     background-color: #e1e1e4;
@@ -791,14 +752,7 @@ input[type='checkbox'] {
 }
 
 // ico
-.icon-only {
-  &.grid-data-add {
-    @include icon-only('icon-add-circle.png', 1.714em);
-  }
-  &.grid-data-delete {
-    @include icon-only('icon-minus-circle.png', 1.714em);
-  }
-}
+
 
 .ico {
   position: relative;
