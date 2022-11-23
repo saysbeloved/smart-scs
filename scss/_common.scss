@@ -112,6 +112,9 @@ $min-xlarge: 'screen and (min-width: 1920px)';
 @mixin en {
   letter-spacing: 0;
 }
+.en {
+  letter-spacing: 0;
+}
 
 // size
 @mixin form-style {
@@ -133,7 +136,7 @@ $min-xlarge: 'screen and (min-width: 1920px)';
   font-size: 1rem;
 }
 
-// main radius
+// radius
 @mixin main-radius {
   border: {
     bottom-left-radius: $radius-main;
@@ -148,7 +151,6 @@ $header-height: 8em; // 128px
 
 $menu-height: 4.571em;
 $filter-bar-height: 4.857rem; // 68px
-$header-color: #111;
 
 $color-primary: #3645b1;
 $color-primary-deep: #1e2c7e;
@@ -159,12 +161,16 @@ $color-total-num: #e32929;
 $color-success: #4ce2a7;
 $color-error: #e32929;
 
+$color-white: #fff;
 $color-light: #fff;
 $color-deep: #000;
 $color-dark: #111;
+$color-gray: #c1c2cb;
 
 $color-bg: #f1f4f9;
 $color-text-default: #7c8094; // sub-text
+$color-text-sub: #b5b5b5; // sub-text-flyout
+
 $color-grid-header: #dfdfe0;
 $color-border-form: #e4e4ea;
 $color-border-form-filter: #848485;
@@ -172,10 +178,11 @@ $color-border-sidepanel: #d2d2d7;
 
 $radius-default: 40px;
 $radius-main: 80px;
+$radius-small: 20px;
 $radius-round: 9999px;
 
 $drop-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.08);
-$box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+$box-shadow: 0 40px 50px 10px rgb(30, 44, 126, 0.6);
 $box-shadow-modal: 0 2px 10px 0 rgba(0, 0, 0, 0.18);
 
 @mixin icon($name, $size) {
@@ -272,7 +279,7 @@ a {
   border: 1px solid transparent;
   border-radius: $radius-round;
   background-color: $color-deep;
-  color: $color-light;
+  color: $color-white;
   font-weight: 700;
   line-height: 1;
   transition: all 0.3s ease;
@@ -285,7 +292,7 @@ a {
 
   &.outline {
     border-color: $color-border-form;
-    background-color: $color-light;
+    background-color: $color-white;
     color: $color-dark;
 
     &:hover {
@@ -313,7 +320,7 @@ a {
 
   &:disabled {
     background-color: #e1e1e4;
-    color: $color-light;
+    color: $color-white;
   }
 
   // radio-toggle-btn

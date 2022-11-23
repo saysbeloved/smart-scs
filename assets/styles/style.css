@@ -181,6 +181,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.en {
+  letter-spacing: 0;
+}
+
 html,
 body,
 input,
@@ -1045,6 +1049,9 @@ header button i {
 .main header {
   border-radius: 0;
 }
+.main header button.home {
+  visibility: hidden;
+}
 
 section {
   display: flex;
@@ -1114,6 +1121,10 @@ section {
   padding-left: 3.75em;
   padding-right: 5em;
   padding-bottom: 6.25em;
+}
+.main-area .weather-area svg {
+  width: 9.375em;
+  height: 8.125em;
 }
 .main-area .weather-area .info {
   padding-top: 0.938em;
@@ -1196,4 +1207,67 @@ section {
 .news-area img {
   width: 100%;
   border-radius: 40px;
+}
+
+.flyout-guide {
+  position: absolute;
+  top: 10em;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 5em;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  background-color: #fff;
+  box-shadow: 0 -40px 50px 10px rgba(30, 44, 126, 0.6);
+}
+.flyout-guide .title {
+  padding-top: 3.125em;
+}
+.flyout-guide .title span {
+  color: #b5b5b5;
+  font-size: 1.736rem;
+}
+.flyout-guide h2 {
+  position: relative;
+  padding-bottom: 0.262em;
+  color: #1e2c7e;
+  font-size: 4.774rem;
+  font-weight: 700;
+}
+.flyout-guide h2 i {
+  position: absolute;
+  top: -0.06em;
+  padding-left: 0.18em;
+  font-size: 6.25rem;
+}
+.flyout-guide .contents {
+  padding-top: 5em;
+}
+.flyout-guide .how-to li {
+  position: relative;
+  padding-left: 4.688rem;
+}
+.flyout-guide .how-to li::before {
+  content: "";
+  position: absolute;
+  display: block;
+  letter-spacing: 0;
+  content: "01";
+  top: 0;
+  left: 0;
+  width: 2.16em;
+  height: 1.76em;
+  padding-top: 0.4em;
+  border-radius: 20px;
+  background-color: #c1c2cb;
+  color: #f2f5ff;
+  font-size: 1.736rem;
+  font-weight: 700;
+  text-align: center;
+}
+.flyout-guide .how-to li:nth-child(2)::before {
+  content: "02";
 }

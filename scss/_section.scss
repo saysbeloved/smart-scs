@@ -56,7 +56,7 @@ section {
           size: 5.208em; // 83.328px
           weight: 700;
         }
-        box-shadow: 0 40px 50px 10px rgb(30 44 126 / 0.6);
+        box-shadow: $box-shadow;
 
         span {
           padding-right: 0.192em; // 16px
@@ -75,6 +75,10 @@ section {
       left: 3.75em; // 60px
       right: $global-space;
       bottom: 6.25em; // 100px
+    }
+    svg {
+      width: 9.375em; // 150px
+      height: 8.125em; // 130px
     }
     .info {
       padding: {
