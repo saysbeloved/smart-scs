@@ -1022,7 +1022,7 @@ header {
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
   background-color: #3645b1;
-  z-index: 9999;
+  z-index: 99;
 }
 header h1 {
   color: #f3f6fe;
@@ -1273,6 +1273,7 @@ table tbody .title a {
   border-top-right-radius: 80px;
   background-color: #fff;
   box-shadow: 0 -40px 50px 10px rgba(30, 44, 126, 0.6);
+  z-index: 9999;
   opacity: 0;
   transform: translateY(100%);
   transition: all 0.4s cubic-bezier(0.32, 1, 0.23, 1);

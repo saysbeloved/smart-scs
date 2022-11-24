@@ -1022,7 +1022,7 @@ header {
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
   background-color: #3645b1;
-  z-index: 9999;
+  z-index: 99;
 }
 header h1 {
   color: #f3f6fe;

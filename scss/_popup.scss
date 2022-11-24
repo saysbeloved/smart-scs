@@ -14,6 +14,7 @@
   }
   background-color: $color-white;
   box-shadow: 0 -40px 50px 10px rgb(30, 44, 126, 0.6);
+  z-index: 9999;
 
   opacity: 0;
   transform: translateY(100%);
