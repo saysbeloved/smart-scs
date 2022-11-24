@@ -17,6 +17,7 @@ header {
     bottom-right-radius: $radius-default;
   }
   background-color: $color-primary;
+  z-index: 9999;
 
   h1 {
     color: #f3f6fe;

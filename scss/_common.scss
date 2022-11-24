@@ -157,8 +157,8 @@ $color-primary-deep: #1e2c7e;
 $color-secondary: #54abe7;
 $color-tertiary: #ea6c78;
 $color-yellow: #f7d63b;
+$color-green: #53be89;
 $color-total-num: #e32929;
-$color-success: #4ce2a7;
 $color-error: #e32929;
 
 $color-white: #fff;
@@ -166,10 +166,11 @@ $color-light: #fff;
 $color-deep: #000;
 $color-dark: #111;
 $color-gray: #c1c2cb;
+$color-blue-gray: #7c85a3;
 
 $color-bg: #f1f4f9;
 $color-text-default: #7c8094; // sub-text
-$color-text-sub: #b5b5b5; // sub-text-flyout
+$color-text-sub: #b5b5b5; // sub-text-bottom-sheet
 
 $color-grid-header: #dfdfe0;
 $color-border-form: #e4e4ea;
@@ -214,9 +215,9 @@ button {
 }
 
 body {
-  overflow: hidden;
   height: 100vh;
   background-color: $color-bg;
+  overflow: hidden;
 }
 
 input,
@@ -270,16 +271,16 @@ a {
   padding: 0 1.429em; // 11px 20px 기본 버튼을 100*38로 해놨네
   border: 1px solid transparent;
   border-radius: $radius-round;
-  background-color: $color-deep;
-  color: $color-white;
-  font-weight: 700;
+  background-color: $color-primary;
+  color: #f3f6fe;
+  font-weight: 500;
   line-height: 1;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 
   &:hover,
   &:focus,
   &:visited {
-    background-color: #636364;
+    background-color: $color-primary-deep;
   }
 
   &.outline {
@@ -388,7 +389,7 @@ select {
     color: #848485;
   }
   &.success {
-    border-color: $color-success;
+    border-color: $color-green;
   }
   &.error {
     border-color: $color-error;

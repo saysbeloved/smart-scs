@@ -1260,169 +1260,81 @@ table tbody .title a {
   border-radius: 40px;
 }
 
-.bottom-sheet-guide {
-  position: absolute;
-  top: 10em;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.publishing-list {
+  overflow: auto;
+}
+.publishing-list header {
+  flex-direction: column;
+  justify-content: center;
+  height: 18.75em;
+  padding: 0;
+}
+.publishing-list header .title {
   display: flex;
   flex-direction: column;
-  padding: 5em;
-  border-top-left-radius: 80px;
-  border-top-right-radius: 80px;
-  background-color: #fff;
-  box-shadow: 0 -40px 50px 10px rgba(30, 44, 126, 0.6);
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.4s cubic-bezier(0.32, 1, 0.23, 1);
-}
-.bottom-sheet-guide .title {
-  padding-top: 3.125em;
-}
-.bottom-sheet-guide .title span {
-  color: #b5b5b5;
-  font-size: 1.736rem;
-}
-.bottom-sheet-guide h2 {
+  justify-content: center;
+  align-items: center;
   position: relative;
-  padding-bottom: 0.196em;
-  color: #1e2c7e;
-  font-size: 4.774rem;
-  font-weight: 700;
+  width: 100%;
+  height: 18.75em;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  background-color: #3645b1;
 }
-.bottom-sheet-guide h2 i {
-  position: absolute;
-  top: -0.06em;
-  padding-left: 0.18em;
-  font-size: 6.25rem;
-}
-.bottom-sheet-guide .contents {
-  padding-top: 4.375em;
-  @TODO;
-}
-.bottom-sheet-guide .button-area {
-  display: flex;
-  flex-direction: column;
-}
-.bottom-sheet-guide .button-area .btn {
-  height: 2.88em;
-  color: #f3f6fe;
-  font-size: 2.604rem;
-}
-.bottom-sheet-guide .close {
-  position: absolute;
-  top: 1.875em;
-  right: 3.625em;
-}
-.bottom-sheet-guide .close i {
-  color: #c1c2cb;
-  font-size: 6.25rem;
-}
-.bottom-sheet-guide.active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.4s cubic-bezier(0.32, 1, 0.23, 1);
-}
-.bottom-sheet-guide .contents {
-  flex-basis: auto;
-  flex-grow: 1;
-  justify-content: flex-start;
-}
-.bottom-sheet-guide .how-to > li {
-  position: relative;
-  padding-left: 4.688em;
-  padding-bottom: 3.125em;
-}
-.bottom-sheet-guide .how-to > li::before {
+.publishing-list header .title::before {
   content: "";
   position: absolute;
   display: block;
-  letter-spacing: 0;
-  content: "01";
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
   top: 0;
-  left: 0;
-  width: 2.16em;
-  height: 1.7em;
-  padding-top: 0.46em;
-  border-radius: 20px;
-  background-color: #c1c2cb;
-  color: #f2f5ff;
-  font-size: 1.736rem;
+  width: 100%;
+  height: 26.25em;
+  background-color: #1e2c7e;
+  z-index: -1;
+}
+.publishing-list header .title h2 {
+  letter-spacing: 0;
+  color: #3ca5ee;
+  font-size: 5.208rem;
+  font-weight: 100;
+}
+.publishing-list section {
+  margin-top: 26.25em;
+}
+.publishing-list section .list-group + .list-group {
+  padding-top: 3.75em;
+}
+.publishing-list section .list-group h3 {
+  padding-bottom: 0.563em;
+  color: #53be89;
+  font-size: 2rem;
   font-weight: 700;
+}
+.publishing-list section table thead th {
+  letter-spacing: 0;
   text-align: center;
 }
-.bottom-sheet-guide .how-to > li:nth-child(2)::before {
-  content: "02";
+.publishing-list section table thead th:first-child {
+  text-align: left;
 }
-.bottom-sheet-guide .how-to > li:nth-child(3)::before {
-  content: "03";
+.publishing-list section table tbody td {
+  height: 5rem;
+  text-align: center;
 }
-.bottom-sheet-guide .how-to > li:nth-child(4)::before {
-  content: "04";
+.publishing-list section table tbody td.title {
+  text-align: left;
 }
-.bottom-sheet-guide .how-to > li h3 {
-  padding-bottom: 0.309em;
-  color: #353f8b;
-  font-size: 3.038rem;
+.publishing-list section table tbody td.date {
+  letter-spacing: 0;
+  font-size: 1.519rem;
 }
-.bottom-sheet-guide .how-to > li h3 + span {
-  color: #7c85a3;
-  font-size: 1.736rem;
+.publishing-list section table tbody td.state i {
+  font-size: 3.75rem;
 }
-.bottom-sheet-guide .how-to > li h3 .info-install {
-  padding-left: 0.48em;
-  color: #353a5a;
-  font-size: 1.302rem;
-  font-weight: 400;
-}
-.bottom-sheet-guide .how-to > li h3 .info-install i {
+.publishing-list section table tbody td.state.finished {
   color: #ea6c78;
 }
-.bottom-sheet-guide .how-to .qr-install {
-  margin-top: 1.563em;
-}
-.bottom-sheet-guide .how-to .qr-install img {
-  width: 7.5em;
-  height: 7.5em;
-}
-.bottom-sheet-guide .how-to .qr-install .description {
-  display: inline-flex;
-  align-items: center;
-  padding-left: 0.823em;
-  color: #7c85a3;
-  font-size: 1.519rem;
-  font-weight: 700;
-  vertical-align: top;
-}
-.bottom-sheet-guide .how-to .qr-install .description i {
-  padding-right: 0.222em;
-  font-size: 0.929em;
-}
-.bottom-sheet-guide .safety-check {
-  margin-top: 0.938em;
-}
-.bottom-sheet-guide .safety-check li + li {
-  padding-top: 2.188em;
-}
-.bottom-sheet-guide .safety-check li h4 {
-  display: inline-block;
-  padding-top: 0.411em;
-  padding-right: 0.878em;
-  padding-bottom: 0.411em;
-  padding-left: 0.878em;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #dddddd;
-  border-radius: 9999px;
-  background-color: #f6f6f6;
-  color: #3c84f1;
-  font-size: 2.279rem;
-}
-.bottom-sheet-guide .safety-check li h4 + span {
-  display: block;
-  padding-top: 0.617em;
-  padding-left: 0.329em;
-  color: #7c85a3;
-  font-size: 1.519rem;
+.publishing-list section table tbody td.state.ongoing {
+  color: #54abe7;
 }

@@ -1,13 +1,12 @@
-// flyout type
-@mixin flyout {
-  display: none;
+// bottom-sheet
+@mixin bottom-sheet {
   position: absolute;
   top: 10em;
   right: 0;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
   padding: $global-space;
   border: {
     top-left-radius: $radius-main;
@@ -15,6 +14,10 @@
   }
   background-color: $color-white;
   box-shadow: 0 -40px 50px 10px rgb(30, 44, 126, 0.6);
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s cubic-bezier(0.32, 1, 0.23, 1);
 
   .title {
     padding-top: 3.125em; // 50px
@@ -27,7 +30,7 @@
 
   h2 {
     position: relative;
-    padding-bottom: 0.262em; // 20px
+    padding-bottom: 0.196em; // 15px
     color: $color-primary-deep;
     font: {
       size: 4.774rem; // 76.384px
@@ -42,32 +45,68 @@
   }
 
   .contents {
-    padding-top: $global-space;
+    padding-top: 4.375em;
+    @TODO // 70px;
+  }
+
+  .button-area {
+    display: flex;
+    flex-direction: column;
+    .btn {
+      height: 2.88em; // 120px
+      color: #f3f6fe;
+      font-size: 2.604rem; // 41.664px
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 1.875em; // 30px
+    right: 3.625em; // 58px
+    i {
+      color: $color-gray;
+      font-size: 6.250rem; // 100px
+    }
+  }
+
+  &.active {
+    // display: block;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.32, 1, 0.23, 1);
   }
 }
 
-.flyout-guide {
-  @include flyout;
-  
+// guide
+.bottom-sheet-guide {
+  @include bottom-sheet;
+
+  .contents {
+    @include flex-grow;
+  }
+
   .how-to {
-    li {
+    > li {
       position: relative;
-      padding-left: 4.688rem; // 75px
+      padding: {
+        left: 4.688em; // 75px
+        bottom: 3.125em; // 50px
+      }
       &::before {
         @include pseudo-before;
         @include en;
-        $size: 2.160em; // 3.750em; // 60px;
+        $size: 2.16em; // 60px;
         content: '01';
         top: 0;
         left: 0;
         width: $size;
-        height: 1.76em;
-        padding-top: 0.4em;
+        height: 1.7em;
+        padding-top: 0.46em;
         border-radius: $radius-small;
         background-color: $color-gray;
         color: #f2f5ff;
         font: {
-          size: 1.736rem;
+          size: 1.736rem; // 27.776px
           weight: 700;
         }
         text-align: center;
@@ -76,9 +115,98 @@
       &:nth-child(2)::before {
         content: '02';
       }
+      &:nth-child(3)::before {
+        content: '03';
+      }
+      &:nth-child(4)::before {
+        content: '04';
+      }
+
+      h3 {
+        padding-bottom: 0.309em; // 15px
+        color: #353f8b;
+        font-size: 3.038rem; // 48.608px
+        + span {
+          color: $color-blue-gray;
+          font-size: 1.736rem; // 27.776px
+        }
+
+        .info-install {
+          padding-left: 0.480em; // 10px
+          color: #353a5a;
+          font: {
+            size: 1.302rem; // 20.832px
+            weight: 400;
+          }
+          i {
+            color: $color-tertiary;
+          }
+        }
+      }
+    }
+
+    .qr-install {
+      $size: 7.5em; // 120px
+      margin-top: 1.563em; // 25px
+      img {
+        width: $size;
+        height: $size;
+      }
+      .description {
+        display: inline-flex;
+        align-items: center;
+        padding-left: 0.823em; // 20px
+        color: $color-blue-gray;
+        font: {
+          size: 1.519rem; // 24.304px
+          weight: 700;
+        }
+        vertical-align: top;
+
+        i {
+          padding-right: 0.222em; // 5px
+          font-size: 0.929em; // 22.568px
+        }
+      }
     }
   }
-  &.active {
-    display: block;
+
+  .safety-check {
+    margin-top: 0.938em; // 15px
+
+    li {
+      + li {
+        padding-top: 2.188em; // 35px
+      }
+      h4 {
+        $v-space: 0.411em; // 15px
+        $h-space: 0.878em; // 32px
+        display: inline-block;
+        padding: {
+          top: $v-space;
+          right: $h-space;
+          bottom: $v-space;
+          left: $h-space;
+        }
+        border: {
+          width: 1px;
+          style: solid;
+          color: #dddddd;
+          radius: $radius-round;
+        }
+        background-color: #f6f6f6;
+        color: #3c84f1;
+        font-size: 2.279rem; // 36.456px
+        + span {
+          display: block;
+          padding: {
+            top: 0.617em; // 15px
+            left: 0.329em; // 8px
+          }
+          color: $color-blue-gray;
+          font-size: 1.519rem; // 24.304px
+        }
+      }
+    }
   }
 }
