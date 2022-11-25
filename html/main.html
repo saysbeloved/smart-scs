@@ -25,10 +25,11 @@
     <section>
       <!-- main-area -->
       <div class="main-area">
-        <!-- main-cotents -->
+        <!-- main-contents -->
         <div class="main-contents">
-          <!-- weather-area -->
-          <div class="weather-area">
+          <!-- weather-box -->
+          <div class="weather-box">
+            <!-- weather-icon -->
             <svg
               viewBox="0 0 404 328"
               fill="none"
@@ -321,7 +322,7 @@
                 </linearGradient>
               </defs>
             </svg>
-
+            <!-- //weather-icon -->
             <div class="info">
               <!-- 일부러 전부 span으로 나눠놓습니다 -->
               <div class="info-date">
@@ -334,12 +335,16 @@
               </div>
             </div>
           </div>
-          <!-- //weather-area -->
-          <div class="safety-check-area">
+          <!-- //weather-box -->
+
+          <!-- button-box -->
+          <div class="button-box">
             <button type="button" class="btn"><span>자가</span>안전점검</button>
           </div>
+          <!-- //button-box -->
         </div>
-        <!-- //main-cotents -->
+        <!-- //main-contents -->
+
         <!-- guide-contents -->
         <div class="guide-contents">
           <button type="button" onclick="openBottomSheet('guide-panel')">
@@ -349,6 +354,7 @@
         <!-- //guide-contents -->
       </div>
       <!-- //main-area -->
+
       <!-- news-area -->
       <div class="news-area">
         <img src="./../assets/images/ex-notice2.png" alt="" />
@@ -359,6 +365,7 @@
 
     <!-- bottom-sheet -->
     <div class="bottom-sheet-guide" id="guide-panel">
+      <!-- close-x-button -->
       <button
         type="button"
         class="close"
@@ -366,18 +373,22 @@
       >
         <i class="ph-x-thin"><span class="hidden">닫기</span></i>
       </button>
-      <!-- title -->
-      <div class="title">
-        <h2>환영합니다!<i class="ph-smiley"></i></h2>
-        <span
-          ><span class="en">APP</span>을 설치하고 출입
-          <span class="en">QR</span>코드를 발급받는 방법을 알려드릴게요.</span
-        >
-      </div>
-      <!-- //title -->
+      <!-- //close-x-button -->
 
-      <!-- contents -->
-      <div class="contents">
+      <!-- title-area -->
+      <div class="title-area">
+        <div class="title">
+          <h2>환영합니다!<i class="ph-smiley"></i></h2>
+        </div>
+        <div class="title-description">
+          <span class="en">APP</span>을 설치하고 출입
+          <span class="en">QR</span>코드를 발급받는 방법을 알려드릴게요.
+        </div>
+      </div>
+      <!-- //title-area -->
+
+      <!-- contents-area -->
+      <div class="contents-area">
         <ol class="how-to">
           <li>
             <h3>
@@ -392,7 +403,7 @@
             >
             <div class="qr-install">
               <img
-                src="./../../assets/images/img-qr-app.png"
+                src="./../assets/images/img-app-qr.png"
                 alt="APP 설치 QR코드"
               />
               <div class="description">
@@ -440,7 +451,7 @@
           </li>
         </ol>
       </div>
-      <!-- //contents -->
+      <!-- //contents-area -->
 
       <!-- button-area -->
       <div class="button-area">

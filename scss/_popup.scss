@@ -20,23 +20,16 @@
   transform: translateY(100%);
   transition: all 0.4s cubic-bezier(0.32, 1, 0.23, 1);
 
-  .title {
-    padding-top: 3.125em; // 50px
+  .title-area {
+    padding-top: 1.800em; // 50px
 
-    span {
-      color: $color-text-sub;
-      font-size: 1.736rem;
+    .title-description {
+      color: $color-text-sub-panel;
     }
   }
 
   h2 {
     position: relative;
-    padding-bottom: 0.196em; // 15px
-    color: $color-primary-deep;
-    font: {
-      size: 4.774rem; // 76.384px
-      weight: 700;
-    }
     i {
       position: absolute;
       top: -0.06em; // 6px
@@ -45,18 +38,20 @@
     }
   }
 
-  .contents {
-    padding-top: 4.375em;
-    @TODO // 70px;
-  }
-
   .button-area {
     display: flex;
     flex-direction: column;
     .btn {
       height: 2.88em; // 120px
+      background-color: $color-primary;
       color: #f3f6fe;
       font-size: 2.604rem; // 41.664px
+
+      &:hover,
+      &:focus,
+      &:visited {
+        background-color: $color-primary-deep;
+      }
     }
   }
 
@@ -64,9 +59,10 @@
     position: absolute;
     top: 1.875em; // 30px
     right: 3.625em; // 58px
+    z-index: 9;
     i {
       color: $color-gray;
-      font-size: 6.250rem; // 100px
+      font-size: 6.25rem; // 100px
     }
   }
 
@@ -82,7 +78,7 @@
 .bottom-sheet-guide {
   @include bottom-sheet;
 
-  .contents {
+  .contents-area {
     @include flex-grow;
   }
 
@@ -133,7 +129,7 @@
         }
 
         .info-install {
-          padding-left: 0.480em; // 10px
+          padding-left: 0.48em; // 10px
           color: #353a5a;
           font: {
             size: 1.302rem; // 20.832px
@@ -177,17 +173,17 @@
 
     li {
       + li {
-        padding-top: 2.188em; // 35px
+        padding-top: 2.000em; // 32px
       }
       h4 {
-        $v-space: 0.411em; // 15px
-        $h-space: 0.878em; // 32px
+        $space-v: 0.411em; // 15px
+        $space-h: 0.878em; // 32px
         display: inline-block;
         padding: {
-          top: $v-space;
-          right: $h-space;
-          bottom: $v-space;
-          left: $h-space;
+          top: $space-v;
+          bottom: $space-v;
+          left: $space-h;
+          right: $space-h;
         }
         border: {
           width: 1px;

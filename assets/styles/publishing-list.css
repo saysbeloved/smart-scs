@@ -202,7 +202,7 @@ textarea,
 button {
   font-size: 16px;
   font-family: "SFPro", "NotoKR", sans-serif;
-  color: #7c8094;
+  color: #6a6e83;
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
@@ -220,7 +220,7 @@ button {
 }
 
 a {
-  color: #7c8094;
+  color: #6a6e83;
   text-decoration: none;
 }
 a:hover, a:focus, a:active, a:visited {
@@ -251,24 +251,40 @@ a:hover, a:focus, a:active, a:visited {
 }
 
 .error-message {
-  color: #e32929;
+  color: #c70d0d;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1.429em;
-  border: 1px solid transparent;
+  height: 2.88em;
+  padding-left: 1.44em;
+  padding-right: 1.44em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
   border-radius: 9999px;
-  background-color: #3645b1;
-  color: #f3f6fe;
+  background-color: #c1c2cb;
+  color: #f8f9fd;
+  font-size: 1.736rem;
   font-weight: 500;
   line-height: 1;
   transition: all 0.4s ease;
 }
 .btn:hover, .btn:focus, .btn:visited {
-  background-color: #1e2c7e;
+  background-color: #74c0e8;
+}
+.btn.dark {
+  height: 2.56em;
+  padding-left: 1.344em;
+  padding-right: 1.344em;
+  background-color: #656985;
+  color: #eaecf8;
+  font-size: 1.953rem;
+}
+.btn.dark:hover, .btn.dark:focus, .btn.dark:visited {
+  background-color: #54abe7;
 }
 .btn.outline {
   border-color: #e4e4ea;
@@ -288,9 +304,6 @@ a:hover, a:focus, a:active, a:visited {
   line-height: 4rem;
   background-color: #3645b1;
   font-size: 1.071rem;
-}
-.btn.round {
-  border-radius: 9999px;
 }
 .btn:disabled {
   background-color: #e1e1e4;
@@ -373,7 +386,7 @@ select {
   padding: 0.75em 0.857em;
   border: 1px solid #e4e4ea;
   border-radius: 40px;
-  background-color: #fff;
+  background-color: #f8f9fd;
   font-size: 1rem;
 }
 input[type=text].small,
@@ -382,7 +395,7 @@ select.small {
   padding: 0.538em 0.923em;
   border: 1px solid #e4e4ea;
   border-radius: 40px;
-  background-color: #fff;
+  background-color: #f8f9fd;
   font-size: 0.929rem;
 }
 input[type=text]:focus, input[type=text]:active, input[type=text].focus,
@@ -409,8 +422,8 @@ select.success {
 input[type=text].error,
 input[type=number].error,
 select.error {
-  border-color: #e32929;
-  color: #e32929;
+  border-color: #c70d0d;
+  color: #c70d0d;
 }
 
 .radio {
@@ -447,7 +460,7 @@ select.error {
   border-color: #e4e4ea;
   border-radius: 9999px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: #f8f9fd;
   transition: 0.2s;
 }
 .radio input[type=radio] + span::after {
@@ -524,7 +537,7 @@ input[type=checkbox]::before {
   border-color: #e4e4ea;
   border-radius: 40px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: #f8f9fd;
   transition: 0.2s;
 }
 input[type=checkbox]::after {
@@ -588,7 +601,7 @@ input[type=checkbox]:disabled::before {
   border-color: #e4e4ea;
   border-radius: 40px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: #f8f9fd;
   transition: 0.2s;
 }
 .checkbox input[type=checkbox] + span::after {
@@ -756,7 +769,7 @@ input[type=checkbox]:disabled::before {
   position: absolute;
   top: calc(50% - (1rem / 2));
   width: 7.143rem;
-  color: #fff;
+  color: #f8f9fd;
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
@@ -770,7 +783,7 @@ input[type=checkbox]:disabled::before {
   height: 3.429rem;
   border-width: 0.357rem;
   border-style: solid;
-  border-color: #fff;
+  border-color: #f8f9fd;
   border-bottom-color: #3645b1;
   border-radius: 9999px;
   display: inline-block;
@@ -844,7 +857,7 @@ input[type=checkbox]:disabled::before {
   min-width: 57.143rem;
   min-height: 35.714rem;
   padding: 5em;
-  background-color: #fff;
+  background-color: #f8f9fd;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.18);
 }
 .error-wrapper .error .content {
@@ -1065,6 +1078,49 @@ section {
   padding: 0;
 }
 
+.title-area {
+  padding-top: 1.44em;
+  color: #7c8094;
+  font-size: 1.736rem;
+}
+.title-area .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-area .title-description {
+  padding-top: 0.36em;
+  line-height: 1.4;
+}
+.title-area h3 {
+  padding-top: 0.473em;
+  color: #3c50c4;
+  font-size: 3.038rem;
+  font-weight: 400;
+}
+.title-area h3 .user-name {
+  font-weight: 700;
+}
+
+h2 {
+  color: #1e2c7e;
+  font-size: 4.774rem;
+  font-weight: 700;
+}
+
+.complete-timer {
+  padding-top: 0.432em;
+}
+.complete-timer .num-sec {
+  letter-spacing: 0;
+  color: #c70d0d;
+  font-weight: 700;
+}
+
+.contents-area {
+  padding-top: 4.375em;
+}
+
 table {
   position: relative;
 }
@@ -1101,6 +1157,8 @@ table tbody tr.selected td {
 table tbody th,
 table tbody td {
   height: 7.063rem;
+  padding-top: 1.563rem;
+  padding-bottom: 1.563rem;
   padding-left: 1.125rem;
   padding-right: 1.125rem;
   border-bottom: 1px solid #cbd0dc;
@@ -1108,6 +1166,14 @@ table tbody td {
   font-size: 1.736rem;
   font-weight: 300;
   text-align: left;
+}
+table tbody th i,
+table tbody td i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 table tbody .title {
   color: #253766;
@@ -1143,11 +1209,11 @@ table tbody .title a {
   background-color: #1e2c7e;
   z-index: -1;
 }
-.main-area .main-contents .safety-check-area {
+.main-area .main-contents .button-box {
   padding-bottom: 6.125em;
   text-align: center;
 }
-.main-area .main-contents .safety-check-area button {
+.main-area .main-contents .button-box button {
   height: 2.4em;
   padding-left: 1.56em;
   padding-right: 1.56em;
@@ -1158,12 +1224,12 @@ table tbody .title a {
   font-weight: 700;
   box-shadow: 0 40px 50px 10px rgba(30, 44, 126, 0.6);
 }
-.main-area .main-contents .safety-check-area button span {
+.main-area .main-contents .button-box button span {
   padding-right: 0.192em;
   font-weight: 100;
   letter-spacing: -0.05em;
 }
-.main-area .weather-area {
+.main-area .weather-box {
   flex-basis: auto;
   flex-grow: 1;
   justify-content: flex-start;
@@ -1173,35 +1239,35 @@ table tbody .title a {
   padding-right: 5em;
   padding-bottom: 6.25em;
 }
-.main-area .weather-area svg {
+.main-area .weather-box svg {
   width: 9.375em;
   height: 8.125em;
 }
-.main-area .weather-area .info {
+.main-area .weather-box .info {
   padding-top: 0.938em;
   padding-left: 0.625em;
 }
-.main-area .weather-area .info-date {
+.main-area .weather-box .info-date {
   letter-spacing: 0;
   padding-bottom: 0.36em;
   color: #94a0f4;
   font-size: 1.736rem;
   font-weight: 500;
 }
-.main-area .weather-area .info-date .date {
+.main-area .weather-box .info-date .date {
   padding-right: 0.288em;
 }
-.main-area .weather-area .info-weather {
+.main-area .weather-box .info-weather {
   color: #d1d5f2;
   font-size: 1.953rem;
   font-weight: 700;
 }
-.main-area .weather-area .info-weather .location,
-.main-area .weather-area .info-weather .celsius-mark {
+.main-area .weather-box .info-weather .location,
+.main-area .weather-box .info-weather .celsius-mark {
   padding-right: 0.32em;
 }
-.main-area .weather-area .info-weather .degree,
-.main-area .weather-area .info-weather .celsius-mark {
+.main-area .weather-box .info-weather .degree,
+.main-area .weather-box .info-weather .celsius-mark {
   font-size: 2.17rem;
   font-weight: 600;
 }
@@ -1319,7 +1385,9 @@ table tbody .title a {
   text-align: left;
 }
 .publishing-list section table tbody td {
-  height: 5rem;
+  height: 3.75rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
   text-align: center;
 }
 .publishing-list section table tbody td.title {

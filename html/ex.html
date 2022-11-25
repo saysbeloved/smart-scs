@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart SCS</title>
+    <style>
+      .light-container {
+        position: absolute;
+        height: 100px;
+        width: 120px;
+        top: 500px;
+        left: 30%;
+        transform-style: preserve-3d;
+        transform-origin: left center;
+        transform: perspective(500px) rotateY(0);
+        animation: lightRotate 10s linear infinite;
+      }
+      .light-container .light {
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transform-origin: left center;
+        transform: perspective(500px) rotateY(-35deg);
+        background: linear-gradient(
+          90deg,
+          #f7f2b4 40%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+      .glow {
+        width: 100px;
+        height: 60px;
+        top: 50%;
+        left: 30%;
+        opacity: 0;
+        border-radius: 50%;
+        background-color: #f7f2b4;
+        box-shadow: 0 0 10px #f7f2b4, 0 0 20px #f7f2b4, 0 0 30px #f7f2b4,
+          0 0 40px #f7f2b4, 0 0 50px #f7f2b4, 0 0 60px #f7f2b4, 0 0 70px #f7f2b4,
+          0 0 80px #f7f2b4;
+        animation: lightGlow 10s linear infinite;
+      }
+      @keyframes lightRotate {
+        25% {
+          transform: perspective(500px) rotateY(35deg);
+        }
+        75% {
+          transform: perspective(500px) rotateY(-35deg);
+        }
+      }
+      @keyframes lightGlow {
+        50% {
+          opacity: 0;
+        }
+        75% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+      <div class="light-container">
+        <div class="light"></div>
+      </div>
+      <div class="glow"></div>
+  </body>
+</html>

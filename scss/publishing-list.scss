@@ -8,7 +8,7 @@
 
 .publishing-list {
   overflow: auto;
-  
+
   header {
     flex-direction: column;
     justify-content: center;
@@ -76,13 +76,18 @@
       }
       tbody {
         td {
-          height: 5.000rem; // 80px
+          $space-v: 0.625rem; // 10px
+          height: 3.750rem;
+          padding: {
+            top: $space-v;
+            bottom: $space-v;
+          }
           text-align: center;
           &.title {
             text-align: left;
           }
           &.date {
-            @include en; 
+            @include en;
             font-size: 1.519rem; // 24.304px
           }
           &.state {

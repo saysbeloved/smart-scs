@@ -5,9 +5,59 @@ section {
   overflow: auto;
 }
 
-// exception
+// section exception
 .main section {
   padding: 0;
+}
+
+// title-area
+.title-area {
+  padding-top: 1.440em; // 40px
+  color: $color-text-sub;
+  font-size: 1.736rem; // 27.776px
+
+  .title {
+    @include flex-between;
+  }
+
+  .title-description {
+    padding-top: 0.36em; // 10px
+    line-height: 1.4;
+  }
+
+  h3 {
+    padding-top: 0.473em; // 23px
+    color: $color-text-title-sub;
+    font: {
+      size: 3.038rem; // 48.608px
+      weight: 400;
+    }
+    .user-name {
+      font-weight: 700;
+    }
+  }
+}
+
+h2 {
+  color: $color-primary-deep;
+  font: {
+    size: 4.774rem; // 76.384px
+    weight: 700;
+  }
+}
+
+.complete-timer {
+  padding-top: 0.432em; // 12px
+  .num-sec {
+    @include en;
+    color: $color-important;
+    font-weight: 700;
+  }
+}
+
+// contents-area
+.contents-area {
+  padding-top: 4.375em; // 70px;
 }
 
 // table
@@ -50,10 +100,14 @@ table {
 
     th,
     td {
+      $space-h: 1.125rem; // 18px
+      $space-v: 1.563rem; // 25px
       height: 7.063rem; // 113px
       padding: {
-        left: 1.125rem;
-        right: 1.125rem;
+        top: $space-v;
+        bottom: $space-v;
+        left: $space-h;
+        right: $space-h;
       }
       border-bottom: 1px solid #cbd0dc;
       color: #555f78;
@@ -62,6 +116,9 @@ table {
         weight: 300;
       }
       text-align: left;
+      i {
+        @include flex-center;
+      }
     }
 
     .title {
@@ -99,7 +156,7 @@ table {
       z-index: -1;
     }
 
-    .safety-check-area {
+    .button-box {
       padding-bottom: 6.125em; // 98px
       text-align: center;
       button {
@@ -132,7 +189,7 @@ table {
     }
   }
 
-  .weather-area {
+  .weather-box {
     @include flex-grow;
     display: flex;
     padding: {
