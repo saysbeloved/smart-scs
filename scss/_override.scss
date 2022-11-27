@@ -1,0 +1,46 @@
+// slick
+.slick-list {
+  border-radius: $radius-default;
+}
+
+.slick-dots {
+  width: calc(100% - (#{$global-space * 2}));
+  bottom: calc($global-space + 1.875em);
+  li {
+    $size: 1.875rem; // 30px
+    width: $size;
+    height: $size;
+    margin: 0.938em; // 15px
+
+    button {
+      width: $size;
+      height: $size;
+      border-radius: $radius-round;
+      background: $color-primary;
+      opacity: 0.3;
+      &::before {
+        display: none;
+      }
+    }
+
+    &.slick-active {
+      button {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+// jQuery - progressbar
+.ui-widget.ui-widget-content.ui-progressbar {
+  height: 0.18em; // 5px
+  border: 0 none;
+  border-radius: $radius-round;
+  background-color: #c0c4df;
+  .ui-progressbar-value {
+    margin: 0;
+    border: 0 none;
+    border-radius: $radius-round;
+    background-color: $color-tertiary;
+  }
+}

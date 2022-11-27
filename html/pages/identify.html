@@ -6,8 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart SCS</title>
     <script src="https://unpkg.com/phosphor-icons"></script>
-    <script defer src="./../assets/scripts/script.js"></script>
+    <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="./../../assets/scripts/jquery-ui.min.js"></script>
+    <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
+    <script type="module">
+      let progress = 30;
+      const timer = setInterval(() => {
+        progress -= 1;
+        if (progress >= 0) updateProgress(progress);
+      }, 1000);
+
+      function updateProgress(value) {
+        $('#timer-bar').progressbar({
+          value: (value * 100) / 30,
+        });
+        $('#timer-num').text(parseInt(value * 1));
+      }
+      updateProgress(30);
+    </script>
   </head>
   <body>
     <!-- header -->
@@ -35,18 +52,22 @@
           <span class="en">QR</span>코드를 우측의 스캐너에 인식시켜 주세요.
         </div>
         <div class="complete-timer">
-          <span class="num-sec">30</span>초 내에 완료해 주세요.
-          <div class="timer-bar"></div>
+          <span class="timer-num" id="timer-num">30</span>초 내에 완료해 주세요.
+          <div class="timer-bar" id="timer-bar"></div>
         </div>
       </div>
       <!-- //title-area -->
 
       <!-- contents-area -->
       <div class="contents-area">
-        <img src="./../../assets/images/img-qr.png" alt="스캐너에 QR코드 인식">
+        <div class="image-wrap">
+          <img
+            src="./../../assets/images/img-qr.png"
+            alt="스캐너에 QR코드 인식"
+          />
+        </div>
       </div>
       <!-- //contents-area -->
-
     </section>
     <!-- //section -->
 

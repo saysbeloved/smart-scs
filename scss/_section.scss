@@ -12,7 +12,7 @@ section {
 
 // title-area
 .title-area {
-  padding-top: 1.440em; // 40px
+  padding-top: 1.44em; // 40px
   color: $color-text-sub;
   font-size: 1.736rem; // 27.776px
 
@@ -47,17 +47,57 @@ h2 {
 }
 
 .complete-timer {
+  display: inline-block;
   padding-top: 0.432em; // 12px
-  .num-sec {
+  .timer-num {
     @include en;
+    display: inline-block;
+    width: 1.44em; // 40px
     color: $color-important;
     font-weight: 700;
+  }
+  .timer-bar {
+    margin-top: 0.288em; // 8px
   }
 }
 
 // contents-area
 .contents-area {
   padding-top: 4.375em; // 70px;
+
+  .image-wrap {
+    position: relative;
+    text-align: center;
+
+    &::before {
+      @include pseudo-before;
+      $size: 37.5rem; // 500px
+      top: -8.6%;
+      left: 21.6%;
+      width: $size;
+      height: $size;
+      background: radial-gradient(#c70d0d80 0%, transparent 30%);
+      clip-path: polygon(50% 50%, 100% 45%, 100% 55%);
+      opacity: 0.2;
+      animation: light 2s linear infinite;
+    }
+
+    &::after {
+      @include pseudo-before;
+      $size: 1rem; // 16px
+      top: calc(23.9% - #{$size / 2});
+      left: calc(54.15% - #{$size / 2});
+      width: $size;
+      height: $size;
+      border-radius: $radius-round;
+      background-color: #c70d0d;
+      opacity: 0;
+      box-shadow: 0 0 10px #c70d0d, 0 0 20px #c70d0d, 0 0 30px #c70d0d,
+        0 0 40px #c70d0d, 0 0 50px #c70d0d, 0 0 60px #c70d0d, 0 0 70px #c70d0d,
+        0 0 80px #c70d0d;
+      animation: lightGlow 1s linear infinite;
+    }
+  }
 }
 
 // table
@@ -198,7 +238,7 @@ table {
       right: $global-space;
       bottom: 6.25em; // 100px
     }
-    svg {
+    img {
       width: 9.375em; // 150px
       height: 8.125em; // 130px
     }

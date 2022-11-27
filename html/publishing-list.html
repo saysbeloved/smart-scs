@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart SCS - Publishing List</title>
     <script src="https://unpkg.com/phosphor-icons"></script>
+    <script defer src="./../assets/scripts/jquery-3.6.1.min.js"></script>
     <script defer src="./../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../assets/styles/publishing-list.css" />
   </head>
@@ -38,10 +39,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="title">
-                  <a href="splash.html" target="_blank">Splash</a>
-                </td>
+              <tr onclick="openPage('splash.html')">
+                <td class="title">Splash</td>
                 <td class="date"></td>
                 <td class="state ongoing">
                   <i class="ph-spinner-gap"
@@ -49,10 +48,8 @@
                   >
                 </td>
               </tr>
-              <tr>
-                <td class="title">
-                  <a href="main.html" target="_blank">Main</a>
-                </td>
+              <tr onclick="openPage('main.html')">
+                <td class="title">Main</td>
                 <td class="date">2022-11-28</td>
                 <td class="state finished">
                   <i class="ph-smiley"><span class="hidden">완료</span></i>
@@ -134,7 +131,9 @@
               </tr>
               <tr>
                 <td class="title">
-                  <a href="pages/user-verify-first.html" target="_blank">정보 확인 - 처음 사용자</a>
+                  <a href="pages/user-verify-first.html" target="_blank"
+                    >정보 확인 - 처음 사용자</a
+                  >
                 </td>
                 <td class="date"></td>
                 <td class="state finished">
@@ -243,18 +242,14 @@
               </tr>
               <tr>
                 <td class="title">
-                  <a href="#" target="_blank"
-                    >음주 측정 - 초기화 중</a
-                  >
+                  <a href="#" target="_blank">음주 측정 - 초기화 중</a>
                 </td>
                 <td class="date"></td>
                 <td class="state"></td>
               </tr>
               <tr>
                 <td class="title">
-                  <a href="#" target="_blank"
-                    >음주 측정 - 분석중</a
-                  >
+                  <a href="#" target="_blank">음주 측정 - 분석중</a>
                 </td>
                 <td class="date"></td>
                 <td class="state"></td>
