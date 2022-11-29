@@ -1481,7 +1481,7 @@ table tbody .title a {
 }
 
 .news-area {
-  padding: 80px;
+  padding: 5em;
 }
 .news-area img {
   width: 100%;
@@ -1940,8 +1940,8 @@ table tbody .title a {
 }
 
 .slick-dots {
-  width: calc(100% - 160px);
-  bottom: calc(80px + 1.875em);
+  width: calc(100% - (10em));
+  bottom: 6.875em;
 }
 .slick-dots li {
   width: 1.875rem;
