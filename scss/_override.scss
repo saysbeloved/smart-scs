@@ -11,8 +11,8 @@
 }
 
 .slick-dots {
-  width: calc(100% - (#{$global-space * 2}));
-  bottom: calc($global-space + 1.875em);
+  width: calc(100% - 160px);
+  bottom: calc(80px + 1.875em);
   li {
     $size: 1.875rem; // 30px
     width: $size;
