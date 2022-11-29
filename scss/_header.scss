@@ -49,6 +49,13 @@ header {
 .main header {
   border-radius: 0;
 
+  &.default-style {
+    border: {
+      bottom-left-radius: $radius-default;
+      bottom-right-radius: $radius-default;
+    }
+  }
+
   button {
     &.home {
       visibility: hidden;

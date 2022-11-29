@@ -19,6 +19,22 @@
           arrows: false,
           dots: true,
         });
+
+        const header = document.querySelector('header');
+
+        const headerHeight = header.offsetHeight;
+        console.log('offsetHeight', headerHeight);
+
+        $('#main-section').scroll(function () {
+          const windowTop = $('#main-section').scrollTop();
+          console.log('windowTop', windowTop);
+
+          if (windowTop >= headerHeight) {
+            header.classList.add('default-style');
+          } else {
+            header.classList.remove('default-style');
+          }
+        });
       });
       // /slick
     </script>
@@ -36,7 +52,7 @@
     </header>
     <!-- //header -->
     <!-- section -->
-    <section>
+    <section id="main-section">
       <!-- main-area -->
       <div class="main-area">
         <!-- main-contents -->
@@ -62,7 +78,13 @@
 
           <!-- button-box -->
           <div class="button-box">
-            <button type="button" class="btn" onclick="linkPage('pages/identify.html')"><span>자가</span>안전점검</button>
+            <button
+              type="button"
+              class="btn"
+              onclick="linkPage('pages/identify.html')"
+            >
+              <span>자가</span>안전점검
+            </button>
           </div>
           <!-- //button-box -->
         </div>

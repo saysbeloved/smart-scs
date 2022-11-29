@@ -194,31 +194,27 @@ h6 {
   font-weight: 700;
 }
 
-// // scroll
-// ::-webkit-scrollbar {
-//   width: 14px;
-//   height: 14px;
-//   &-thumb {
-//     border: {
-//       width: 3px;
-//       style: solid;
-//       color: transparent;
-//       radius: 8px;
-//     }
-//     background: {
-//       color: #c1c1c1;
-//       clip: padding-box;
-//     };
-//   }
-//   &-track {
-//     border: {
-//       left-width: 1px;
-//       right-width: 1px;
-//       top: 0 none;
-//       bottom: 0 none;
-//       style: solid;
-//       color: #e8e8e8;
-//     }
-//     background: #fafafa;
-//   }
-// }
+// scroll
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  &-thumb {
+    border: {
+      width: 2px;
+      style: solid;
+      color: transparent;
+      radius: 4px;
+    }
+    background: {
+      color: rgba(#3645b1, 0.5);
+      clip: padding-box;
+    }
+    &:hover {
+      background-color: rgba(#3645b1, 0.7);
+    }
+  }
+  &-track {
+    border: 0 none;
+    background: transparent;
+  }
+}

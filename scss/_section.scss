@@ -3,12 +3,19 @@ section {
   height: calc(100vh - #{$header-height});
   margin-top: $header-height; // 8em 128px
   padding: $global-space;
-  overflow: auto;
+  overflow: overlay;
 }
 
 // section exception
 .main section {
-  padding: 0;
+  height: 100vh;
+  margin-top: 0;
+  padding: {
+    top: $header-height; // 8em 128px
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 // title-area
@@ -103,18 +110,23 @@ h2 {
 
 // step-area
 .step-area {
-  min-height: 10.000rem; // 160px
+  min-height: 10rem; // 160px
   ol {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
 
     li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       position: relative;
-      width: 8.563rem; // 137px
+      // width: 8.563rem; // 137px
+      width: 100%;
       height: 100%;
       padding: 0.823em;
+      padding-top: 5em;
       border: {
         width: 1px;
         style: solid;
@@ -245,7 +257,7 @@ table {
 // main
 .main-area {
   @include flex-column;
-  min-height: 47.625em; // 762px
+  // min-height: 39.625em; // 634px
 
   .main-contents {
     @include flex-column;
@@ -350,8 +362,7 @@ table {
 
   .guide-contents {
     @include main-radius;
-    height: 10em; // 160px
-    min-height: 80px;
+    height: 10rem; // 160px
     background-color: $color-primary-deep;
 
     button {
@@ -390,7 +401,6 @@ table {
 }
 
 .news-area {
-  @include flex-grow;
   padding: $global-space;
   img {
     width: 100%;

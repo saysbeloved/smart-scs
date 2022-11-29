@@ -10,6 +10,22 @@
     <script defer src="./../../assets/scripts/jquery-ui.min.js"></script>
     <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
+    <script type="module">
+      let progress = 3;
+      const timer = setInterval(() => {
+        progress -= 1;
+        if (progress >= 0) updateProgress(progress);
+      }, 1000);
+
+      function updateProgress(value) {
+        if (value == 0) {
+          $('.dimmed-countdown').hide();
+          return;
+        }
+        $('#countdown-num').text(parseInt(value * 1));
+      }
+      updateProgress(3);
+    </script>
   </head>
   <body>
     <!-- header -->
