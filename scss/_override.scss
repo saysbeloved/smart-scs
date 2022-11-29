@@ -1,6 +1,10 @@
 // slick
 .slick-list {
   border-radius: $radius-default;
+  background-color: $color-white;
+  .slick-track {
+    @include flex-center;
+  }
 }
 
 .slick-dots {

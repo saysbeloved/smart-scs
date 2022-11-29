@@ -8,6 +8,11 @@ function closeBottomSheet(id) {
   el.classList.remove('active');  
 }
 
+// link
+function linkPage(link) {
+  document.location.href = link;
+}
+
 // table link
 function openPage(link) {
   window.open(link);

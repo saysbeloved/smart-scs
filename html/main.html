@@ -22,7 +22,6 @@
       });
       // /slick
     </script>
-    
   </head>
   <body class="main">
     <!-- header -->
@@ -45,7 +44,7 @@
           <!-- weather-box -->
           <div class="weather-box">
             <!-- weather-icon -->
-            <img src="./../assets/images/weather/sun.svg" alt="">
+            <img src="./../assets/images/weather/sun.svg" alt="" />
             <!-- //weather-icon -->
             <div class="info">
               <!-- 일부러 전부 span으로 나눠놓습니다 -->
@@ -63,7 +62,7 @@
 
           <!-- button-box -->
           <div class="button-box">
-            <button type="button" class="btn"><span>자가</span>안전점검</button>
+            <button type="button" class="btn" onclick="linkPage('pages/identify.html')"><span>자가</span>안전점검</button>
           </div>
           <!-- //button-box -->
         </div>
@@ -91,106 +90,112 @@
     <!-- //section -->
 
     <!-- bottom-sheet -->
-    <div class="bottom-sheet-guide" id="guide-panel">
-      <!-- close-x-button -->
-      <button
-        type="button"
-        class="close"
-        onclick="closeBottomSheet('guide-panel')"
-      >
-        <i class="ph-x-thin"><span class="hidden">닫기</span></i>
-      </button>
-      <!-- //close-x-button -->
-
-      <!-- title-area -->
-      <div class="title-area">
-        <div class="title">
-          <h2>환영합니다!<i class="ph-smiley"></i></h2>
-        </div>
-        <div class="title-description">
-          <span class="en">APP</span>을 설치하고 출입
-          <span class="en">QR</span>코드를 발급받는 방법을 알려드릴게요.
-        </div>
-      </div>
-      <!-- //title-area -->
-
-      <!-- contents-area -->
-      <div class="contents-area">
-        <ol class="how-to">
-          <li>
-            <h3>
-              <span class="en">APP</span> 설치<span class="info-install"
-                ><i class="ph-asterisk-simple"></i>안드로이드 버전 5.0 이상 설치
-                가능</span
-              >
-            </h3>
-            <span
-              >구글플레이에서 <span class="en">'Smart SCS'</span>를 검색하여
-              <span class="en">APP</span>을 설치합니다.</span
-            >
-            <div class="qr-install">
-              <img
-                src="./../assets/images/img-app-qr.png"
-                alt="APP 설치 QR코드"
-              />
-              <div class="description">
-                <i class="ph-caret-left"></i
-                ><span class="text"
-                  ><span class="en">APP</span> 설치
-                  <span class="en">QR</span>코드</span
-                >
-              </div>
-            </div>
-          </li>
-          <li>
-            <h3>작업자 <span class="en">QR</span>코드 발급</h3>
-            <span
-              ><span class="en">APP</span> 실행 후 본인의 정보를 입력하고 작업자
-              <span class="en">QR</span>코드를 발급받습니다.</span
-            >
-          </li>
-          <li>
-            <h3>작업 선택 및 안전점검</h3>
-            <ol class="safety-check">
-              <li>
-                <h4><span class="en">QR</span>코드 인식</h4>
-                <span
-                  >발급받은 <span class="en">QR</span>코드를 키오스크에 인식하여
-                  개인정보를 확인합니다.</span
-                >
-              </li>
-              <li>
-                <h4>작업사항 확인 및 선택</h4>
-                <span>본인의 작업사항을 확인하고 선택합니다.</span>
-              </li>
-              <li>
-                <h4>자가 안전점검</h4>
-                <span>안전 장비 착용 검수 및 음주, 체온 등을 측정합니다.</span>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <h3>출입 <span class="en">QR</span>코드 발급</h3>
-            <span
-              >출입 <span class="en">QR</span>코드를 발급받으면
-              완료됩니다.</span
-            >
-          </li>
-        </ol>
-      </div>
-      <!-- //contents-area -->
-
-      <!-- button-area -->
-      <div class="button-area">
+    <div class="bottom-sheet" id="guide-panel">
+      <!-- bottom-sheet-container -->
+      <div class="bottom-sheet-guide">
+        <!-- close-x-button -->
         <button
           type="button"
-          class="btn"
+          class="close"
           onclick="closeBottomSheet('guide-panel')"
         >
-          확인했어요
+          <i class="ph-x-thin"><span class="hidden">닫기</span></i>
         </button>
+        <!-- //close-x-button -->
+
+        <!-- title-area -->
+        <div class="title-area">
+          <div class="title">
+            <h2>환영합니다!<i class="ph-smiley"></i></h2>
+          </div>
+          <div class="title-description">
+            <span class="en">APP</span>을 설치하고 출입
+            <span class="en">QR</span>코드를 발급받는 방법을 알려드릴게요.
+          </div>
+        </div>
+        <!-- //title-area -->
+
+        <!-- contents-area -->
+        <div class="contents-area">
+          <ol class="how-to">
+            <li>
+              <h3>
+                <span class="en">APP</span> 설치<span class="info-install"
+                  ><i class="ph-asterisk-simple"></i>안드로이드 버전 5.0 이상
+                  설치 가능</span
+                >
+              </h3>
+              <span
+                >구글플레이에서 <span class="en">'Smart SCS'</span>를 검색하여
+                <span class="en">APP</span>을 설치합니다.</span
+              >
+              <div class="qr-install">
+                <img
+                  src="./../assets/images/img-app-qr.png"
+                  alt="APP 설치 QR코드"
+                />
+                <div class="description">
+                  <i class="ph-caret-left"></i
+                  ><span class="text"
+                    ><span class="en">APP</span> 설치
+                    <span class="en">QR</span>코드</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <h3>작업자 <span class="en">QR</span>코드 발급</h3>
+              <span
+                ><span class="en">APP</span> 실행 후 본인의 정보를 입력하고
+                작업자 <span class="en">QR</span>코드를 발급받습니다.</span
+              >
+            </li>
+            <li>
+              <h3>작업 선택 및 안전점검</h3>
+              <ol class="safety-check">
+                <li>
+                  <h4><span class="en">QR</span>코드 인식</h4>
+                  <span
+                    >발급받은 <span class="en">QR</span>코드를 키오스크에
+                    인식하여 개인정보를 확인합니다.</span
+                  >
+                </li>
+                <li>
+                  <h4>작업사항 확인 및 선택</h4>
+                  <span>본인의 작업사항을 확인하고 선택합니다.</span>
+                </li>
+                <li>
+                  <h4>자가 안전점검</h4>
+                  <span
+                    >안전 장비 착용 검수 및 음주, 체온 등을 측정합니다.</span
+                  >
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h3>출입 <span class="en">QR</span>코드 발급</h3>
+              <span
+                >출입 <span class="en">QR</span>코드를 발급받으면
+                완료됩니다.</span
+              >
+            </li>
+          </ol>
+        </div>
+        <!-- //contents-area -->
+
+        <!-- button-area -->
+        <div class="button-area">
+          <button
+            type="button"
+            class="btn"
+            onclick="closeBottomSheet('guide-panel')"
+          >
+            확인했어요
+          </button>
+        </div>
+        <!-- //button-area -->
       </div>
-      <!-- //button-area -->
+      <!-- //bottom-sheet-container -->
     </div>
     <!-- //bottom-sheet -->
   </body>

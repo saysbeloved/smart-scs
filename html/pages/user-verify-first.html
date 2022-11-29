@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart SCS</title>
     <script src="https://unpkg.com/phosphor-icons"></script>
-    <script defer src="./../assets/scripts/script.js"></script>
+    <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="./../../assets/scripts/jquery-ui.min.js"></script>
+    <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
   </head>
   <body>
     <!-- header -->
     <header>
-      <button type="button" class="home">
+      <button type="button" class="home" onclick="linkPage('../main.html')">
         <i class="ph-house"><span class="hidden">Home</span></i>
       </button>
       <h1><span>Smart</span>SCS</h1>
@@ -24,6 +26,19 @@
 
     <!-- section -->
     <section>
+      <!-- step-area -->
+      <div class="step-area">
+        <ol>
+          <li>정보 확인 작업 선택</li>
+          <li>안전 장비 검수</li>
+          <li>음주 측정</li>
+          <li>체온 측정</li>
+          <li>혈압 측정</li>
+          <li>QR 발급</li>
+        </ol>
+      </div>
+      <!-- //step-area -->
+
       <!-- title-area -->
       <div class="title-area">
         <div class="title">
@@ -32,124 +47,22 @@
         <h3><span class="user-name">정우주</span>님, 안녕하세요.</h3>
         <div class="title-description">
           정면을 보고 바르게 서 주세요.<br />
-          사진 촬영 후 자동으로 다음 단계로 진행된니다.
+          사진 촬영 후 자동으로 다음 단계로 진행됩니다.
         </div>
       </div>
       <!-- //title-area -->
 
       <!-- contents-area -->
       <div class="contents-area">
-        <img
-          src="./../../assets/images/img-qr.png"
-          alt="스캐너에 QR코드 인식"
-        />
+        <div class="image-wrap">
+          <img
+            src="./../../assets/images/img-qr.png"
+            alt="스캐너에 QR코드 인식"
+          />
+        </div>
       </div>
       <!-- //contents-area -->
     </section>
     <!-- //section -->
-
-    <!-- bottom-sheet -->
-    <div class="bottom-sheet-guide" id="guide-panel">
-      <!-- close-x-button -->
-      <button
-        type="button"
-        class="close"
-        onclick="closeBottomSheet('guide-panel')"
-      >
-        <i class="ph-x-thin"><span class="hidden">닫기</span></i>
-      </button>
-      <!-- //close-x-button -->
-
-      <!-- title-area -->
-      <div class="title-area">
-        <div class="title">
-          <h2>환영합니다!<i class="ph-smiley"></i></h2>
-        </div>
-        <div class="title-description">
-          <span class="en">APP</span>을 설치하고 출입
-          <span class="en">QR</span>코드를 발급받는 방법을 알려드릴게요.
-        </div>
-      </div>
-      <!-- //title-area -->
-
-      <!-- contents-area -->
-      <div class="contents-area">
-        <ol class="how-to">
-          <li>
-            <h3>
-              <span class="en">APP</span> 설치<span class="info-install"
-                ><i class="ph-asterisk-simple"></i>안드로이드 버전 5.0 이상 설치
-                가능</span
-              >
-            </h3>
-            <span
-              >구글플레이에서 <span class="en">'Smart SCS'</span>를 검색하여
-              <span class="en">APP</span>을 설치합니다.</span
-            >
-            <div class="qr-install">
-              <img
-                src="./../assets/images/img-app-qr.png"
-                alt="APP 설치 QR코드"
-              />
-              <div class="description">
-                <i class="ph-caret-left"></i
-                ><span class="text"
-                  ><span class="en">APP</span> 설치
-                  <span class="en">QR</span>코드</span
-                >
-              </div>
-            </div>
-          </li>
-          <li>
-            <h3>작업자 <span class="en">QR</span>코드 발급</h3>
-            <span
-              ><span class="en">APP</span> 실행 후 본인의 정보를 입력하고 작업자
-              <span class="en">QR</span>코드를 발급받습니다.</span
-            >
-          </li>
-          <li>
-            <h3>작업 선택 및 안전점검</h3>
-            <ol class="safety-check">
-              <li>
-                <h4><span class="en">QR</span>코드 인식</h4>
-                <span
-                  >발급받은 <span class="en">QR</span>코드를 키오스크에 인식하여
-                  개인정보를 확인합니다.</span
-                >
-              </li>
-              <li>
-                <h4>작업사항 확인 및 선택</h4>
-                <span>본인의 작업사항을 확인하고 선택합니다.</span>
-              </li>
-              <li>
-                <h4>자가 안전점검</h4>
-                <span>안전 장비 착용 검수 및 음주, 체온 등을 측정합니다.</span>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <h3>출입 <span class="en">QR</span>코드 발급</h3>
-            <span
-              >출입 <span class="en">QR</span>코드를 발급받으면
-              완료됩니다.</span
-            >
-          </li>
-        </ol>
-      </div>
-      <!-- //contents-area -->
-
-      <!-- button-area -->
-      <div class="button-area">
-        <button
-          type="button"
-          class="btn"
-          onclick="closeBottomSheet('guide-panel')"
-        >
-          확인했어요
-        </button>
-      </div>
-      <!-- //button-area -->
-    </div>
-    <!-- //bottom-sheet -->
   </body>
 </html>
