@@ -315,14 +315,17 @@
     background-color: $color-bg;
     .contents-area {
       @include flex-grow;
+      $inner-space: 1.25rem; // 20px
       border-radius: $radius-default;
       margin: {
-        top: 5.000rem; // 100px
+        top: 5rem; // 100px
         bottom: 3.125rem; // 50px
       }
       padding: {
-        top: 1.250rem; // 20px
-        bottom: 1.250rem;
+        top: $inner-space; 
+        bottom: $inner-space;
+        left: 0;
+        right: $inner-space;
       }
       color: #898da0;
       font-size: 1.953rem; // 31.248px
