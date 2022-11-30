@@ -312,10 +312,10 @@ a:hover, a:focus, a:active, a:visited {
 .btn.outline {
   border-color: #e4e4ea;
   background-color: #fff;
-  color: #111;
+  color: #656985;
 }
 .btn.outline:hover {
-  border-color: #111;
+  border-color: #656985;
 }
 .btn.outline:disabled {
   border-color: #e4e4ea;
@@ -331,38 +331,6 @@ a:hover, a:focus, a:active, a:visited {
 .btn:disabled {
   background-color: #e1e1e4;
   color: #fff;
-}
-.btn.radio-toggle {
-  padding-left: 1.3em;
-  padding-right: 1.3em;
-  border-color: #e4e4ea;
-  background-color: #f2f2f3;
-  color: #111;
-  font-size: 1rem;
-  font-weight: 400;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.btn.checkbox-btn {
-  justify-content: flex-start;
-  width: 8.571rem;
-  height: 2.714rem;
-  padding-left: 1.429em;
-  padding-right: 2em;
-  border-width: 0;
-  border-radius: 9999px;
-  background-color: #eeeeef;
-  color: #202020;
-  font-size: 1rem;
-  font-weight: 400;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 ::-moz-placeholder {
@@ -556,7 +524,7 @@ input[type=number] {
   display: block;
   width: 100%;
   height: 0.143rem;
-  background-color: #111;
+  background-color: #7c85a3;
 }
 .ico-close::before {
   transform: rotate(45deg);
@@ -910,6 +878,9 @@ section {
   padding: 5em;
   overflow: overlay;
 }
+section.step-section {
+  padding-top: 3.125rem;
+}
 
 .main section {
   height: 100vh;
@@ -1004,23 +975,28 @@ h2 {
 }
 
 .step-area {
-  min-height: 10rem;
+  width: 100%;
+  padding-bottom: 2em;
 }
 .step-area ol {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-items: stretch;
   height: 100%;
 }
 .step-area ol li {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
-  height: 100%;
-  padding: 0.823em;
-  padding-top: 5em;
+  max-width: 10rem;
+  min-height: 10rem;
+  padding-top: 4.114em;
+  padding-right: 0.686em;
+  padding-bottom: 0.686em;
+  padding-left: 0.686em;
   border-width: 1px;
   border-style: solid;
   border-color: #d6d8dc;
@@ -1039,30 +1015,122 @@ h2 {
   position: absolute;
   display: block;
   letter-spacing: 0;
-  content: "01";
+  content: "1";
   top: 0;
   left: 0;
   width: 100%;
-  height: 1.7em;
-  padding-top: 0.46em;
+  padding-top: 0.234em;
   color: #caccd8;
   font-size: 3.472rem;
   font-weight: 700;
 }
 .step-area ol li:nth-child(2)::before {
-  content: "02";
+  content: "2";
 }
 .step-area ol li:nth-child(3)::before {
-  content: "03";
+  content: "3";
 }
 .step-area ol li:nth-child(4)::before {
-  content: "04";
+  content: "4";
 }
 .step-area ol li:nth-child(5)::before {
-  content: "05";
+  content: "5";
 }
 .step-area ol li:nth-child(6)::before {
-  content: "06";
+  content: "6";
+}
+.step-area ol li.active {
+  border-color: transparent;
+  background-color: #3c50c4;
+  box-shadow: 0 20px 30px 0 rgba(150, 162, 237, 0.6);
+  color: #f1f4f9;
+}
+.step-area ol li.active::before {
+  color: #fff;
+}
+.step-area ol li.done {
+  border-color: transparent;
+  background-color: #3645b1;
+  color: #818dce;
+}
+.step-area ol li.done::before {
+  color: #4a5cdc;
+}
+
+.photos-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: stretch;
+}
+.photos-wrap > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.photos-wrap > div:not(:first-child) {
+  margin-left: 1.25em;
+}
+.photos-wrap .photo-box {
+  width: 100%;
+  max-width: 32.5em;
+  height: 32.5em;
+  border-radius: 40px;
+  background-color: #e9edf4;
+}
+.photos-wrap .photo-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+.photos-wrap .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.photos-wrap .description span {
+  margin-top: 0.823em;
+  padding-top: 0.638em;
+  padding-bottom: 0.638em;
+  padding-left: 1.029em;
+  padding-right: 1.029em;
+  border-radius: 9999px;
+  background-color: #898da0;
+  color: #f1f4f9;
+  font-size: 1.519rem;
+}
+
+.photo-last .photo-box {
+  background-image: url("./../images/ico-photo-outline.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.photo-shoot .photo-box {
+  position: relative;
+}
+.photo-shoot .photo-box::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./../images/ico-photo-outline.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  z-index: 9;
+}
+.photo-shoot .description span {
+  background-color: #3645b1;
+  font-weight: 700;
 }
 
 table {

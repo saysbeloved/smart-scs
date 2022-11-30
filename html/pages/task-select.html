@@ -9,22 +9,6 @@
     <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
     <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
-    <script type="module">
-      let progress = 3;
-      const timer = setInterval(() => {
-        progress -= 1;
-        if (progress >= 0) updateProgress(progress);
-      }, 1000);
-
-      function updateProgress(value) {
-        if (value == 0) {
-          $('.dimmed-countdown').hide();
-          return;
-        }
-        $('#countdown-num').text(parseInt(value * 1));
-      }
-      updateProgress(3);
-    </script>
   </head>
   <body>
     <!-- header -->
@@ -57,50 +41,20 @@
       <!-- title-area -->
       <div class="title-area">
         <div class="title">
-          <h2>정보 확인</h2>
+          <h2>작업 선택</h2>
         </div>
-        <h3><span class="user-name">정우주</span>님, 안녕하세요.</h3>
         <div class="title-description">
-          정면을 보고 바르게 서 주세요.<br />
-          사진 촬영 후 자동으로 다음 단계로 진행됩니다.
+          작업명, 리더, 회사명을 확인하고 해당하는 작업을 선택해 주세요.
         </div>
       </div>
       <!-- //title-area -->
 
       <!-- contents-area -->
       <div class="contents-area">
-        <!-- photos-wrap -->
-        <div class="photos-wrap">
-          <!-- 지난번에 찍은 사진 영역 -->
-          <div class="photo-last">
-            <div class="photo-box"></div>
-            <div class="description"><span>지난번에 찍은 사진</span></div>
-          </div>
-          <!-- //지난번에 찍은 사진 영역 -->
 
-          <!-- 지금 찍는 영역 -->
-          <div class="photo-shoot">
-            <div class="photo-box"></div>
-            <div class="description"><span>지금 찍고 있어요!</span></div>
-          </div>
-          <!-- //지금 찍는 영역 -->
-        </div>
-        <!-- //photos-wrap -->
       </div>
       <!-- //contents-area -->
     </section>
     <!-- //section -->
-
-    <!-- dimmed-countdown -->
-    <div class="dimmed-countdown">
-      <!-- countdown -->
-      <div class="countdown-wrap">
-        <div class="countdown">
-          <span class="num" id="countdown-num">3</span>
-        </div>
-      </div>
-      <!-- //countdown -->
-    </div>
-    <!-- //dimmed-countdown -->
   </body>
 </html>
