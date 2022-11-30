@@ -3,10 +3,15 @@
   margin-bottom: 0;
 }
 .slick-list {
+  height: 100%;
   border-radius: $radius-default;
   background-color: $color-white;
   .slick-track {
     @include flex-center;
+    .slick-slide {
+      // height: auto; // @TBD
+      border-radius: $radius-default;
+    }
   }
 }
 

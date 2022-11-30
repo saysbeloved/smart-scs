@@ -1326,11 +1326,10 @@ table tbody .title a {
 }
 
 .news-area {
+  flex-basis: auto;
+  flex-grow: 1;
+  justify-content: flex-start;
   padding: 5em;
-}
-.news-area img {
-  width: 100%;
-  border-radius: 40px;
 }
 
 .publishing-list header {

@@ -21,14 +21,10 @@
         });
 
         const header = document.querySelector('header');
-
         const headerHeight = header.offsetHeight;
-        console.log('offsetHeight', headerHeight);
 
         $('#main-section').scroll(function () {
           const windowTop = $('#main-section').scrollTop();
-          console.log('windowTop', windowTop);
-
           if (windowTop >= headerHeight) {
             header.classList.add('default-style');
           } else {

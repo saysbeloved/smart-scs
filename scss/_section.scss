@@ -256,7 +256,7 @@ h2 {
 
 .photo {
   &-last {
-    .photo-box{
+    .photo-box {
       background: {
         image: image-path('ico-photo-outline.png');
         repeat: no-repeat;
@@ -513,10 +513,7 @@ table {
 }
 
 .news-area {
+  @include flex-grow;
   padding: $global-space;
-  img {
-    width: 100%;
-    border-radius: $radius-default;
-  }
 }
 // /main
