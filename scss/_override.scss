@@ -7,10 +7,17 @@
   border-radius: $radius-default;
   background-color: $color-white;
   .slick-track {
-    @include flex-center;
+    height: 100%;
     .slick-slide {
-      // height: auto; // @TBD
-      border-radius: $radius-default;
+      div {
+        @include flex-center;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        // height: auto; // @TBD
+        border-radius: $radius-default;
+      }
     }
   }
 }

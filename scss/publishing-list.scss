@@ -85,6 +85,11 @@
           }
           text-align: center;
           &.title {
+            color: #253766;
+            font: {
+              size: 1.627rem;
+              weight: 500;
+            }
             text-align: left;
             .remark {
               font: {

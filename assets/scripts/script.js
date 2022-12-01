@@ -1,3 +1,13 @@
+// modal
+function openModal(id) {
+  const el = document.getElementById(id);
+  el.classList.add('active');  
+}
+function closeModal(id) {
+  const el = document.getElementById(id);
+  el.classList.remove('active');  
+}
+
 // bottom-sheet
 function openBottomSheet(id) {
   const el = document.getElementById(id);

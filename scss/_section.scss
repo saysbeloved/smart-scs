@@ -209,6 +209,66 @@ h2 {
   }
 }
 
+// information-area
+.information-area {
+  @include flex-between;
+  padding-top: 2.188em; // 35px
+
+  .user-photo {
+    @include photo-outline;
+    $size: 11.25rem; // 180px
+    width: $size;
+    height: $size;
+    min-width: $size;
+    min-height: $size;
+    margin-right: 2.188em; // 35px
+    border-radius: $radius-round;
+    background-color: #e6e9f0;
+    img {
+      @include photo-image;
+    }
+  }
+
+  .information {
+    @include flex-grow;
+    li {
+      $space-v: 1.25em; // 20px
+      display: flex;
+      align-items: center;
+      padding: {
+        top: $space-v;
+        bottom: $space-v;
+      }
+      font-weight: 700;
+      + li {
+        border-top: 1px solid #d2d6dd;
+      }
+      label {
+        display: inline-block;
+        min-width: 4.115em; // 100px
+        color: $color-gray;
+        font-size: 1.519rem; // 24.304px
+      }
+      span {
+        color: $color-text-title-sub;
+        font-size: 1.953rem; // 31.248px
+      }
+    }
+  }
+
+  h3 {
+    padding-top: 0.473em; // 23px
+    color: $color-text-title-sub;
+    font: {
+      size: 3.038rem; // 48.608px
+      weight: 400;
+    }
+    .user-name {
+      font-weight: 700;
+    }
+  }
+}
+
 // photo - user-verify
 .photos-wrap {
   @include flex-between;
@@ -229,10 +289,7 @@ h2 {
     border-radius: $radius-default;
     background-color: #e9edf4;
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: inherit;
+      @include photo-image;
     }
   }
   .description {
@@ -257,12 +314,7 @@ h2 {
 .photo {
   &-last {
     .photo-box {
-      background: {
-        image: image-path('ico-photo-outline.png');
-        repeat: no-repeat;
-        position: 50% 50%;
-        size: cover;
-      }
+      @include photo-outline;
     }
   }
   &-shoot {
@@ -270,16 +322,11 @@ h2 {
       position: relative;
       &::before {
         @include pseudo-before;
+        @include photo-outline;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: {
-          image: image-path('ico-photo-outline.png');
-          repeat: no-repeat;
-          position: 50% 50%;
-          size: cover;
-        }
         z-index: 9;
       }
     }
@@ -292,79 +339,6 @@ h2 {
   }
 }
 
-// table
-table {
-  position: relative;
-
-  &::before {
-    @include pseudo-before;
-    bottom: 0;
-    width: 100%;
-    border-bottom: 1px solid $color-primary-deep;
-    z-index: 1;
-  }
-
-  thead {
-    th {
-      padding: 1.375rem 1.125rem; // 22px 18px
-      border: {
-        top: 3px solid $color-primary-deep;
-        bottom: 2px solid $color-primary-deep;
-      }
-      background-color: #e7eaef;
-      color: $color-primary-deep;
-      font-size: 1.736rem; // 27.776px
-      text-align: left;
-    }
-  }
-
-  tbody {
-    background-color: #f4f6fa;
-    tr {
-      &:hover td {
-        background: rgba(0, 0, 255, 0.03);
-      }
-      &.selected td {
-        background: rgba(0, 0, 255, 0.07);
-      }
-      cursor: pointer;
-    }
-
-    th,
-    td {
-      $space-h: 1.125rem; // 18px
-      $space-v: 1.563rem; // 25px
-      height: 7.063rem; // 113px
-      padding: {
-        top: $space-v;
-        bottom: $space-v;
-        left: $space-h;
-        right: $space-h;
-      }
-      border-bottom: 1px solid #cbd0dc;
-      color: #555f78;
-      font: {
-        size: 1.736rem; // 27.776px
-        weight: 300;
-      }
-      text-align: left;
-      i {
-        @include flex-center;
-      }
-    }
-
-    .title {
-      color: #253766;
-      font: {
-        size: 1.627rem; // 26.04px // 1.519rem // 24.304px
-        weight: 500;
-      }
-      a {
-        color: #253766;
-      }
-    }
-  }
-}
 
 // main
 .main-area {

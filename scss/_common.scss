@@ -56,6 +56,16 @@ $min-xlarge: 'screen and (min-width: 1920px)';
   text-overflow: ellipsis;
 }
 
+@mixin ellipsis-multi {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: initial;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 // a link
 @mixin alink-block-box {
   display: inline-block;
@@ -125,7 +135,7 @@ $min-xlarge: 'screen and (min-width: 1920px)';
   }
   border-bottom: 1px solid $color-text-sub;
   background-color: transparent;
-  color: #5a81fa;
+  color: $color-secondary-deep;
   font: {
     size: 2.604rem; // 41.664px
     weight: 700;
@@ -136,7 +146,7 @@ $min-xlarge: 'screen and (min-width: 1920px)';
     border-color: $color-secondary;
   }
   &:disabled {
-    border-color: #f1f4f9;;
+    border-color: #f1f4f9;
     color: #ebebeb;
   }
 }
@@ -149,14 +159,33 @@ $min-xlarge: 'screen and (min-width: 1920px)';
   }
 }
 
+// photo frame
+@mixin photo-outline {
+  background: {
+    image: image-path('ico-photo-outline.png');
+    repeat: no-repeat;
+    position: 50% 50%;
+    size: cover;
+  }
+}
+@mixin photo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
 // common variable style
 //
 $global-space: 5em; // 80px
+$modal-space: 6.250em; // 100px
+$modal-toast-space: 10.625em; // 170px
 $header-height: 8em; // 128px
 
 $color-primary: #3645b1;
 $color-primary-deep: #1e2c7e;
 $color-secondary: #54abe7;
+$color-secondary-deep: #5a81fa;
 $color-tertiary: #ea6c78;
 $color-essential: #ea6c78;
 $color-yellow: #f7d63b;
@@ -175,12 +204,12 @@ $color-text-sub: #7c8094; // sub-text
 $color-text-sub-panel: #b5b5b5; // sub-text-bottom-sheet
 $color-text-title-sub: #3c50c4;
 
-$color-grid-header: #dfdfe0;
 $color-border-form: #e4e4ea;
 
 $radius-default: 40px;
 $radius-big: 80px;
 $radius-small: 20px;
+$radius-modal: 60px;
 $radius-round: 9999px;
 
 $box-shadow: 0 40px 50px 10px rgba(30, 44, 126, 0.6);
@@ -368,7 +397,6 @@ input[type='number'] {
   @include en;
 }
 
-
 // checkbox
 .checkbox {
   $size: 3.125rem; // 50px
@@ -403,7 +431,7 @@ input[type='number'] {
     position: relative;
     padding-left: 1.872em; // 65px
     color: $color-text-sub;
-    font-size: 2.170rem; // 34.72px
+    font-size: 2.17rem; // 34.72px
 
     .essential {
       padding-right: 0.288em; // 10px
@@ -449,8 +477,146 @@ input[type='number'] {
   }
 }
 
-// ico
+// table
+table {
+  position: relative;
 
+  &::before {
+    @include pseudo-before;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid $color-primary-deep;
+    z-index: 1;
+  }
+
+  th,
+  td {
+    @include ellipsis;
+  }
+
+  thead {
+    th {
+      padding: 1.375rem 1.125rem; // 22px 18px
+      border: {
+        top: 3px solid $color-primary-deep;
+        bottom: 2px solid $color-primary-deep;
+      }
+      background-color: #e7eaef;
+      color: $color-primary-deep;
+      font-size: 1.736rem; // 27.776px
+      text-align: left;
+    }
+  }
+
+  tbody {
+    background-color: #f4f6fa;
+    tr {
+      &:hover td {
+        background: rgba(0, 0, 255, 0.03);
+      }
+      &.selected td {
+        background: rgba(0, 0, 255, 0.07);
+      }
+      cursor: pointer;
+    }
+
+    th,
+    td {
+      $space-h: 1.125rem; // 18px
+      $space-v: 1.375rem; // 22px
+      height: calc(7.063rem - (#{$space-v} * 2)); // 113px
+      padding: {
+        top: $space-v;
+        bottom: $space-v;
+        left: $space-h;
+        right: $space-h;
+      }
+      border-bottom: 1px solid #cbd0dc;
+      color: #555f78;
+      font: {
+        size: 1.736rem; // 27.776px
+        weight: 300;
+      }
+      text-align: left;
+
+      .title {
+        @include ellipsis-multi;
+        color: #253766;
+        font: {
+          size: 1.519rem; // 24.304px // 1.627rem // 26.04px //
+          weight: 500;
+        }
+        line-height: 1.4;
+      }
+      i {
+        @include flex-center;
+      }
+    }
+  }
+}
+
+// pagination
+.pagination {
+  $size: 3.75rem; // 60px
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.875rem; // 30px
+  button {
+    @include flex-center;
+    width: $size;
+    height: $size;
+    border-radius: $radius-round;
+    background-color: #dddfe3;
+    color: $color-primary-deep;
+    font-size: 2rem; // 32px;
+
+    &:disabled {
+      background-color: #eaedf2;
+      color: #d3d8e5;
+    }
+  }
+
+  .pager {
+    @include en;
+    $inner-side-space: 1.26em; // 35px
+    $outer-side-space: 0.36em; // 10px
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $size;
+    padding: {
+      left: $inner-side-space;
+      right: $inner-side-space;
+    }
+    margin: {
+      left: $outer-side-space;
+      right: $outer-side-space;
+    }
+    border-radius: $radius-round;
+    background-color: #e7eaef;
+    color: #b6b8c6;
+    font: {
+      size: 1.736rem; // 27.776px
+      weight: 300;
+    }
+    span {
+      $space: 0.36em; // 10px
+      padding: {
+        left: $space;
+        right: $space;
+      }
+      color: $color-text-sub;
+      font-weight: 500;
+      &.current-page {
+        color: $color-secondary;
+      }
+    }
+    cursor: default;
+  }
+}
+
+// ico
 .ico {
   position: relative;
 

@@ -49,12 +49,159 @@
       </div>
       <!-- //title-area -->
 
+      <!-- information-area -->
+      <div class="information-area">
+        <div class="user-photo">
+          <img src="./../../assets/images/ex-photo-user.png" alt="" />
+        </div>
+        <ul class="information">
+          <li class="user-name">
+            <label for="">이름</label>
+            <span>정우주</span>
+          </li>
+          <li class="plant-name">
+            <label for="">공장명</label>
+            <span>BPA</span>
+          </li>
+        </ul>
+      </div>
+      <!-- //information-area -->
+
       <!-- contents-area -->
       <div class="contents-area">
+        <!-- table -->
+        <table>
+          <caption>
+            작업 리스트
+          </caption>
+          <colgroup>
+            <col width="54%" />
+            <col width="15.5%" />
+            <col width="30.5%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">작업명</th>
+              <th scope="col">리더</th>
+              <th scope="col">회사명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr onclick="openModal('modal')">
+              <td>
+                <div class="title">
+                  황산 Line 검사관련 비계작업 (1-AC-22002 외 20 Lines)
+                </div>
+              </td>
+              <td>최기조</td>
+              <td>주식회사 진흥플랜트</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="title">
+                  페놀 배관 PM 관련 비파괴 검사 (C2-1.5-AC-22107외 9Line)
+                </div>
+              </td>
+              <td>장은석</td>
+              <td>고려공업검사(주)</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="title">
+                  BPA 배관 PM 관련 비파괴 검사(3-P030401외 8Lines)
+                </div>
+              </td>
+              <td>장은석</td>
+              <td>고려공업검사(주)</td>
+            </tr>
+            <tr>
+              <td><div class="title">대기 자가측정</div></td>
+              <td>홍성대</td>
+              <td>(주)한솔환경산업</td>
+            </tr>
+            <tr>
+              <td><div class="title">7월 BPA 공조기 Filter 청소</div></td>
+              <td>국옥표</td>
+              <td>(주)이에이치엠</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="title">
+                  작업명의 텍스트가 아주 많이 길어지면 두줄까지 보이고 텍스트
+                  줄임표로 표시되는 예시입니다.
+                </div>
+              </td>
+              <td>이름네자</td>
+              <td>회사명은 아홉자</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="title">
+                  작업명의 텍스트가 아주 많이 길어지면 두줄까지 보이고 텍스트
+                  줄임표로 표시되는 예시입니다.
+                </div>
+              </td>
+              <td>이름이깁니다</td>
+              <td>동해물과백두산이마르고닳도록</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- //table -->
 
+        <!-- pagination -->
+        <div class="pagination">
+          <button type="button">
+            <i class="ph-caret-left-bold"
+              ><span class="hidden">이전 페이지</span></i
+            >
+          </button>
+          <div class="pager">
+            <span class="current-page">1</span>&#47;<span class="total-page"
+              >3</span
+            >
+          </div>
+          <button type="button">
+            <i class="ph-caret-right-bold"
+              ><span class="hidden">다음 페이지</span></i
+            >
+          </button>
+        </div>
+        <!-- //pagination -->
       </div>
       <!-- //contents-area -->
     </section>
     <!-- //section -->
+
+    <!-- modal -->
+    <div class="modal" id="modal">
+      <!-- modal-container -->
+      <div class="modal-container">
+        <!-- modal-wrap -->
+        <div class="modal-wrap">
+          <!-- contents-area -->
+          <div class="contents-area">
+            <div class="title">선택한 작업이 맞나요?</div>
+            <div class="title-description selected-task">
+              황산 Line 검사관련 비계작업 (1-AC-22002 외 20 Lines)
+            </div>
+          </div>
+          <!-- //contents-area -->
+
+          <!-- button-area -->
+          <div class="button-area">
+            <button type="button" class="btn" onclick="closeModal('modal')">
+              아니요
+            </button>
+            <button type="button" class="btn" onclick="closeModal('modal')">
+              네, 맞습니다
+            </button>
+          </div>
+          <!-- //button-area -->
+        </div>
+        <!-- //modal-wrap -->
+      </div>
+      <!-- //modal-container -->
+    </div>
+    <!-- //modal -->
   </body>
 </html>
