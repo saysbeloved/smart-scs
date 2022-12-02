@@ -1,6 +1,6 @@
 // modal
 .modal {
-  // display: none;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -39,6 +39,7 @@
     .modal-wrap {
       @include flex-column;
       width: 100%;
+      min-width: 45.625rem; // 730px
       max-width: 56.25rem; // 900px
       min-height: 26.875rem; // 430px;
       border-radius: $radius-modal;
@@ -49,6 +50,25 @@
 
       .contents-area {
         @include flex-grow;
+        padding: 4.375em; // 70px
+        line-height: 1.4;
+
+        .title {
+          color: $color-primary;
+          font: {
+            size: 2.604rem; // 41.664px
+            weight: 700;
+          }
+          &-description {
+            padding-top: 0.9em; // 25px
+            font-size: 1.736rem; // 27.776px
+
+            &.selected-task {
+              color: $color-dark;
+              font-weight: 500;
+            }
+          }
+        }
       }
 
       .button-area {
@@ -318,7 +338,7 @@
       }
     }
 
-    .safety-check {
+    .safety-check-order {
       margin-top: 0.938em; // 15px
 
       li {

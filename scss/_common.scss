@@ -66,21 +66,13 @@ $min-xlarge: 'screen and (min-width: 1920px)';
   -webkit-box-orient: vertical;
 }
 
-// a link
+// layout - flex
 @mixin alink-block-box {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
 
-@mixin alink-flex-box {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-// layout - flex
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -117,6 +109,27 @@ $min-xlarge: 'screen and (min-width: 1920px)';
   flex-basis: auto;
   flex-grow: 0;
   justify-content: flex-end;
+}
+
+// icon
+@mixin icon($name, $size) {
+  width: $size;
+  height: $size;
+  background: {
+    image: image-path($name);
+    repeat: no-repeat;
+    position: 50% 50%;
+    size: $size $size;
+  }
+}
+
+@mixin icon-with($name, $size) {
+  background: {
+    image: image-path($name);
+    repeat: no-repeat;
+    position: 0 50%;
+    size: $size $size;
+  }
 }
 
 @mixin en {
@@ -199,6 +212,7 @@ $color-light: #f8f9fd;
 $color-gray: #c1c2cb;
 $color-blue-gray: #7c85a3;
 $color-dark-gray: #656985;
+$color-dark: #111;
 
 $color-text-sub: #7c8094; // sub-text
 $color-text-sub-panel: #b5b5b5; // sub-text-bottom-sheet
@@ -214,17 +228,6 @@ $radius-round: 9999px;
 
 $box-shadow: 0 40px 50px 10px rgba(30, 44, 126, 0.6);
 $box-shadow-modal: 0 50px 50px 10px rgba(0, 0, 0, 0.2);
-
-@mixin icon($name, $size) {
-  width: $size;
-  height: $size;
-  background: {
-    image: image-path($name);
-    repeat: no-repeat;
-    position: 50% 50%;
-    size: $size $size;
-  }
-}
 
 // common
 html,
@@ -480,6 +483,7 @@ input[type='number'] {
 // table
 table {
   position: relative;
+  margin-top: 0.625em; // 10px 테이블이 작업선택 뿐이라 공통에 넣어둠
 
   &::before {
     @include pseudo-before;

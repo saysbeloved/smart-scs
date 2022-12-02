@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -509,6 +510,7 @@ input[type=number] {
 
 table {
   position: relative;
+  margin-top: 0.625em;
 }
 table::before {
   content: "";
@@ -1039,6 +1041,9 @@ section.step-section {
 .title-area h3 .user-name {
   font-weight: 700;
 }
+.title-area strong {
+  color: #1e2c7e;
+}
 
 h2 {
   color: #1e2c7e;
@@ -1062,6 +1067,7 @@ h2 {
 }
 
 .contents-area {
+  position: relative;
   padding-top: 4.375em;
 }
 .contents-area .image-wrap {
@@ -1097,6 +1103,17 @@ h2 {
   box-shadow: 0 0 10px #c70d0d, 0 0 20px #c70d0d, 0 0 30px #c70d0d, 0 0 40px #c70d0d, 0 0 50px #c70d0d, 0 0 60px #c70d0d, 0 0 70px #c70d0d, 0 0 80px #c70d0d;
   -webkit-animation: lightGlow 1s linear infinite;
           animation: lightGlow 1s linear infinite;
+}
+.contents-area .refresh-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.contents-area .refresh-button .btn {
+  height: 2.16em;
+  padding-left: 1.08em;
+  padding-right: 1.08em;
+  background-color: #656985;
 }
 
 .step-area {
@@ -1173,12 +1190,12 @@ h2 {
 .step-area ol li.active::before {
   color: #fff;
 }
-.step-area ol li.done {
+.step-area ol li.finished {
   border-color: transparent;
   background-color: #3645b1;
   color: #818dce;
 }
-.step-area ol li.done::before {
+.step-area ol li.finished::before {
   color: #4a5cdc;
 }
 
@@ -1243,6 +1260,21 @@ h2 {
   font-weight: 700;
 }
 
+.photo-box {
+  width: 100%;
+  max-width: 32.5em;
+  height: 32.5em;
+  border-radius: 40px;
+  background-color: #e9edf4;
+}
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+
 .photos-wrap {
   display: flex;
   justify-content: space-between;
@@ -1258,20 +1290,6 @@ h2 {
 }
 .photos-wrap > div:not(:first-child) {
   margin-left: 1.25em;
-}
-.photos-wrap .photo-box {
-  width: 100%;
-  max-width: 32.5em;
-  height: 32.5em;
-  border-radius: 40px;
-  background-color: #e9edf4;
-}
-.photos-wrap .photo-box img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: inherit;
 }
 .photos-wrap .description {
   display: flex;
@@ -1297,10 +1315,13 @@ h2 {
   background-position: 50% 50%;
   background-size: cover;
 }
-.photo-shoot .photo-box {
+
+.photo-shoot .photo-box,
+.safety-check .photo-box {
   position: relative;
 }
-.photo-shoot .photo-box::before {
+.photo-shoot .photo-box::before,
+.safety-check .photo-box::before {
   content: "";
   position: absolute;
   display: block;
@@ -1314,9 +1335,174 @@ h2 {
   height: 100%;
   z-index: 9;
 }
-.photo-shoot .description span {
+.photo-shoot .description span,
+.safety-check .description span {
   background-color: #3645b1;
   font-weight: 700;
+}
+
+.safety-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.safety-check .photo-box {
+  width: 100%;
+  min-width: 57.5em;
+  max-width: 57.5em;
+  height: 100%;
+  min-height: 72.5em;
+  max-height: 72.5em;
+}
+.safety-check .photo-box::before {
+  background-image: url("./../images/ico-safety-outline.png");
+}
+.safety-check.gloves .photo-box::before {
+  background-image: url("./../images/ico-safety-outline-gloves.png");
+}
+.safety-check.finished .photo-box::before {
+  content: "";
+  position: absolute;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  -webkit-animation: fade-in 0.3s ease forwards;
+          animation: fade-in 0.3s ease forwards;
+  z-index: 1;
+}
+.safety-check .finished-chips {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.safety-check .finished-chips > div {
+  background-image: url("./../images/ico-safety-pass.svg");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 1.296em 1.296em;
+  display: inline-flex;
+  align-items: center;
+  padding-top: 0.504em;
+  padding-bottom: 0.504em;
+  padding-left: 2.268em;
+  padding-right: 1.08em;
+  border-radius: 9999px;
+  background-color: #c1c2cb;
+  background-position-x: 0.72em;
+  color: #2b2e3d;
+  font-size: 1.736rem;
+  font-weight: 700;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  -webkit-animation: fade-in-down 0.3s ease forwards;
+          animation: fade-in-down 0.3s ease forwards;
+  position: absolute;
+}
+.safety-check .finished-chips > div.helmet {
+  top: 10%;
+  left: 56%;
+}
+.safety-check .finished-chips > div.mask {
+  top: 28%;
+  left: 60%;
+}
+.safety-check .finished-chips > div.vest {
+  top: 39%;
+  left: 67%;
+}
+.safety-check .finished-chips > div.gloves {
+  top: 68%;
+  left: 10%;
+}
+.safety-check .finished-chips > div.gloves::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-image: url("./../images/ico-safety-pass.svg");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 1.296em 1.296em;
+  display: inline-flex;
+  align-items: center;
+  padding-top: 0.504em;
+  padding-bottom: 0.504em;
+  padding-left: 2.268em;
+  padding-right: 1.08em;
+  border-radius: 9999px;
+  background-color: #c1c2cb;
+  background-position-x: 0.72em;
+  color: #2b2e3d;
+  font-size: 1.736rem;
+  font-weight: 700;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  -webkit-animation: fade-in-down 0.3s ease forwards;
+          animation: fade-in-down 0.3s ease forwards;
+  content: "장갑";
+  top: 0;
+  left: 414%;
+  width: 1.81em;
+  height: calc(2.207em - (0.504em * 2));
+}
+.safety-check .finished-chips > div:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+.safety-check .finished-chips > div:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.safety-check .finished-chips > div:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.safety-check .finished-chips > div:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+.safety-check .finished-chips > div:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.safety-check .finished-chips > div:nth-child(7) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+.safety-check .finished-chips > div.fail {
+  color: #f8f9fd;
+  background-color: #c70d0d;
+  background-image: url("./../images/ico-safety-fail.svg");
+  opacity: 1;
+  -webkit-animation: shake-x 0.8s linear forwards;
+          animation: shake-x 0.8s linear forwards;
+}
+.safety-check .finished-chips > div.fail.gloves::before {
+  color: #f8f9fd;
+  background-color: #c70d0d;
+  background-image: url("./../images/ico-safety-fail.svg");
+}
+
+svg {
+  width: 300px;
+  height: 300px;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  transform: translateX(0);
+  -webkit-animation: blow 5s linear infinite;
+          animation: blow 5s linear infinite;
 }
 
 .main-area {
@@ -1512,9 +1698,8 @@ h2 {
   text-align: left;
 }
 .publishing-list section table tbody td {
-  height: 3.75rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.938rem;
+  padding-bottom: 0.938rem;
   text-align: center;
 }
 .publishing-list section table tbody td.title {

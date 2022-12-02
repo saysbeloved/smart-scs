@@ -47,6 +47,10 @@ section {
       font-weight: 700;
     }
   }
+
+  strong {
+    color: $color-primary-deep;
+  }
 }
 
 h2 {
@@ -74,6 +78,7 @@ h2 {
 
 // contents-area
 .contents-area {
+  position: relative;
   padding-top: 4.375em; // 70px;
 
   .image-wrap {
@@ -107,6 +112,21 @@ h2 {
         0 0 40px #c70d0d, 0 0 50px #c70d0d, 0 0 60px #c70d0d, 0 0 70px #c70d0d,
         0 0 80px #c70d0d;
       animation: lightGlow 1s linear infinite;
+    }
+  }
+
+  .refresh-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    .btn {
+      $space-h: 1.08em; // 30px
+      height: 2.16em; // 60px
+      padding: {
+        left: $space-h;
+        right: $space-h;
+      }
+      background-color: #656985;
     }
   }
 }
@@ -197,7 +217,7 @@ h2 {
           color: $color-white;
         }
       }
-      &.done {
+      &.finished {
         border-color: transparent;
         background-color: $color-primary;
         color: #818dce;
@@ -270,6 +290,18 @@ h2 {
 }
 
 // photo - user-verify
+.photo-box {
+  $size: 32.5em; // 520px
+  width: 100%;
+  max-width: $size; // 28.125em; 450px
+  height: $size; // 520px
+  border-radius: $radius-default;
+  background-color: #e9edf4;
+  img {
+    @include photo-image;
+  }
+}
+
 .photos-wrap {
   @include flex-between;
   align-items: stretch;
@@ -279,17 +311,6 @@ h2 {
     width: 100%;
     &:not(:first-child) {
       margin-left: 1.25em; // 20px
-    }
-  }
-  .photo-box {
-    $size: 32.5em; // 520px
-    width: 100%;
-    max-width: $size; // 28.125em; 450px
-    height: $size; // 520px
-    border-radius: $radius-default;
-    background-color: #e9edf4;
-    img {
-      @include photo-image;
     }
   }
   .description {
@@ -311,34 +332,197 @@ h2 {
   }
 }
 
-.photo {
-  &-last {
-    .photo-box {
+.photo-last {
+  .photo-box {
+    @include photo-outline;
+  }
+}
+.photo-shoot,
+.safety-check {
+  .photo-box {
+    position: relative;
+    &::before {
+      @include pseudo-before;
       @include photo-outline;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
     }
   }
-  &-shoot {
+  .description {
+    span {
+      background-color: $color-primary;
+      font-weight: 700;
+    }
+  }
+}
+
+// safety-check
+.safety-check {
+  @include flex-center;
+  position: relative;
+
+  .photo-box {
+    width: 100%;
+    min-width: 57.5em; // 920px
+    max-width: 57.5em; // 920px
+    // max-width: 81.25em; // 1300px
+    height: 100%;
+    min-height: 72.5em; // 1160px
+    max-height: 72.5em; // 1160px
+    // max-height: 93.75em; // 1500px
+
+    &::before {
+      background-image: image-path('ico-safety-outline.png');
+    }
+  }
+
+  &.gloves {
     .photo-box {
-      position: relative;
+      &::before {
+        background-image: image-path('ico-safety-outline-gloves.png');
+      }
+    }
+  }
+
+  &.finished {
+    .photo-box {
       &::before {
         @include pseudo-before;
-        @include photo-outline;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 9;
+        border-radius: $radius-default;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        animation: fade-in 0.3s ease forwards;
+        z-index: 1;
       }
     }
-    .description {
-      span {
-        background-color: $color-primary;
-        font-weight: 700;
+  }
+
+  .finished-chips {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @mixin chip {
+      @include icon-with('ico-safety-pass.svg', 1.296em); // 40px
+      $space-v: 0.504em; // 14px
+      display: inline-flex;
+      align-items: center;
+      padding: {
+        top: $space-v;
+        bottom: $space-v;
+        left: 2.268em; // 63px
+        right: 1.08em; // 30px
+      }
+      border-radius: $radius-round;
+      background-color: $color-gray;
+      background-position-x: 0.72em; // 20px
+      color: #2b2e3d;
+      font: {
+        size: 1.736rem; // 27.776px
+        weight: 700;
+      }
+      white-space: nowrap;
+      z-index: 10;
+      opacity: 0;
+      animation: fade-in-down 0.3s ease forwards;
+    }
+
+    > div {
+      @include chip;
+      position: absolute;
+
+      &.helmet {
+        top: 10%;
+        left: 56%;
+      }
+
+      &.mask {
+        top: 28%;
+        left: 60%;
+      }
+
+      &.vest {
+        top: 39%;
+        left: 67%;
+      }
+
+      &.gloves {
+        top: 68%;
+        left: 10%;
+        &::before {
+          $space-v: 0.504em; // 14px
+          @include pseudo-before;
+          @include chip;
+          content: '장갑';
+          top: 0;
+          left: 414%;
+          width: 1.81em;
+          height: calc(2.207em - (#{$space-v} * 2));
+        }
+      }
+
+      &:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      &:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(6) {
+        animation-delay: 0.5s;
+      }
+      &:nth-child(7) {
+        animation-delay: 0.6s;
+      }
+
+      &.fail {
+        color: $color-light;
+        background: {
+          color: $color-error;
+          image: image-path('ico-safety-fail.svg');
+        }
+        opacity: 1;
+        animation: shake-x 0.8s linear forwards;
+        &.gloves {
+          &::before {
+            color: $color-light;
+            background: {
+              color: $color-error;
+              image: image-path('ico-safety-fail.svg');
+            }
+          }
+        }
       }
     }
   }
 }
 
+// blow
+svg {
+  width: 300px;
+  height: 300px;
+
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    transform: translateX(0);
+    animation: blow 5s linear infinite;
+
+}
 
 // main
 .main-area {

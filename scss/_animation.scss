@@ -1,4 +1,3 @@
-
 // checkbox
 @keyframes scale-in {
   from {
@@ -58,7 +57,7 @@
   }
   90%,
   100% {
-    transform: translateX(2.000rem); // 28px
+    transform: translateX(2rem); // 28px
   }
 }
 
@@ -100,6 +99,40 @@
   }
 }
 
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes shake-x {
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
 @keyframes flex-width {
   0% {
     width: 100%;
@@ -114,11 +147,11 @@
   25% {
     clip-path: polygon(50% 50%, 100% 40%, 100% 60%);
     opacity: 0.4;
- }
+  }
   75% {
     clip-path: polygon(50% 50%, 100% 10%, 100% 90%);
     opacity: 1;
- }
+  }
 }
 @keyframes lightGlow {
   50% {
@@ -129,3 +162,15 @@
   }
 }
 
+// blow
+@keyframes blow {
+  0% {
+    stroke-dashoffset: 500; //0
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 500;
+  }
+}

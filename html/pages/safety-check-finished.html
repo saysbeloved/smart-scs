@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart SCS</title>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="./../../assets/scripts/script.js"></script>
+    <link rel="stylesheet" href="./../../assets/styles/style.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <button type="button" class="home" onclick="linkPage('../main.html')">
+        <i class="ph-house"><span class="hidden">Home</span></i>
+      </button>
+      <h1><span>Smart</span>SCS</h1>
+      <button type="button">
+        <i class="ph-gear"><span class="hidden">Set</span></i>
+      </button>
+    </header>
+    <!-- //header -->
+
+    <!-- section -->
+    <section class="step-section">
+      <!-- step-area -->
+      <div class="step-area">
+        <ol>
+          <li class="finished">정보 확인<br />작업 선택</li>
+          <li class="active">안전 장비 검수</li>
+          <li>음주 측정</li>
+          <li>체온 측정</li>
+          <li>혈압 측정</li>
+          <li>QR 발급</li>
+        </ol>
+      </div>
+      <!-- //step-area -->
+
+      <!-- title-area -->
+      <div class="title-area">
+        <div class="title">
+          <h2>안전 장비 검수</h2>
+        </div>
+        <div class="title-description">
+          안전 장비가 화면에 잘 보이도록 서 주세요.<br />
+          검수가 완료되면 자동으로 다음 단계로 진행됩니다.
+        </div>
+      </div>
+      <!-- //title-area -->
+
+      <!-- contents-area -->
+      <div class="contents-area">
+        <!-- safety-check -->
+        <!-- finished 가 있으면 완료 화면 -->
+        <div class="safety-check gloves finished">
+          <div class="photo-box">
+            <img src="./../../assets/images/ex-photo-safety.png" alt="" />
+
+            <!-- finished-chips -->
+            <div class="finished-chips">
+              <div class="helmet">안전모</div>
+              <div class="mask fail">마스크</div>
+              <div class="vest">엑스밴드</div>
+              <div class="gloves fail">장갑</div>
+            </div>
+            <!-- //finished-chips -->
+          </div>
+        </div>
+        <!-- //safety-check -->
+      </div>
+      <!-- //contents-area -->
+    </section>
+    <!-- //section -->
+  </body>
+</html>
