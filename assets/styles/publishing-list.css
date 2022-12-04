@@ -1074,7 +1074,7 @@ h2 {
   position: relative;
   text-align: center;
 }
-.contents-area .image-wrap::before {
+.contents-area .image-wrap.kiosk::before {
   content: "";
   position: absolute;
   display: block;
@@ -1089,7 +1089,7 @@ h2 {
   -webkit-animation: light 2s linear infinite;
           animation: light 2s linear infinite;
 }
-.contents-area .image-wrap::after {
+.contents-area .image-wrap.kiosk::after {
   content: "";
   position: absolute;
   display: block;
@@ -1360,6 +1360,19 @@ h2 {
 .safety-check .photo-box::before {
   background-image: url("./../images/ico-safety-outline.png");
 }
+.safety-check .photo-box::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 0.313rem;
+  background: linear-gradient(to right, rgba(236, 239, 248, 0.4) 0.6%, #eceff8, rgba(236, 239, 248, 0.4) 99.4%);
+  opacity: 0.8;
+  box-shadow: 0px 0 50px 50px rgba(255, 255, 255, 0.3);
+  top: 50%;
+  -webkit-animation: scan 4s linear infinite;
+          animation: scan 4s linear infinite;
+}
 .safety-check.gloves .photo-box::before {
   background-image: url("./../images/ico-safety-outline-gloves.png");
 }
@@ -1378,6 +1391,10 @@ h2 {
   -webkit-animation: fade-in 0.3s ease forwards;
           animation: fade-in 0.3s ease forwards;
   z-index: 1;
+}
+.safety-check.finished .photo-box::after {
+  content: none;
+  display: none;
 }
 .safety-check .finished-chips {
   position: absolute;
@@ -1495,14 +1512,24 @@ h2 {
   background-image: url("./../images/ico-safety-fail.svg");
 }
 
-svg {
-  width: 300px;
-  height: 300px;
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
-  transform: translateX(0);
-  -webkit-animation: blow 5s linear infinite;
-          animation: blow 5s linear infinite;
+.breath-test svg {
+  position: absolute;
+  top: 51%;
+  right: 12%;
+  width: 10rem;
+  height: 10rem;
+}
+.breath-test svg path {
+  fill: none;
+  stroke: #9dcced;
+  stroke-width: 38;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 1000;
+  opacity: 0;
+  -webkit-animation: blow 3s ease-in-out infinite;
+          animation: blow 3s ease-in-out infinite;
 }
 
 .main-area {

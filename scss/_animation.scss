@@ -162,15 +162,37 @@
   }
 }
 
+// scan
+@keyframes scan {
+  0% {
+    box-shadow: 0px 0 50px 50px rgba($color-white, 0.3);
+    top: 50%;
+  }  
+  25% {
+    box-shadow: 0px 70px 140px 70px rgba($color-white, 0.4);
+    top: 5%;
+  }
+  75% {
+    box-shadow: 0px -70px 140px 70px rgba($color-white, 0.4);
+    top: 95%;
+  }
+}
+
 // blow
 @keyframes blow {
   0% {
-    stroke-dashoffset: 500; //0
+    opacity: 0;
+    stroke-dashoffset: 1000;
   }
-  50% {
+  40% {
+    opacity: 1;
+    stroke-dasharray: 1000;
     stroke-dashoffset: 0;
   }
-  100% {
-    stroke-dashoffset: 500;
+  80% {
+    opacity: 0;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: -1000;
   }
 }
+
