@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart SCS</title>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="./../../assets/scripts/script.js"></script>
+    <link rel="stylesheet" href="./../../assets/styles/style.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <button type="button" class="home" onclick="linkPage('../main.html')">
+        <i class="ph-house"><span class="hidden">Home</span></i>
+      </button>
+      <h1><span>Smart</span>SCS</h1>
+      <button type="button">
+        <i class="ph-gear"><span class="hidden">Set</span></i>
+      </button>
+    </header>
+    <!-- //header -->
+
+    <!-- modal -->
+    <div class="modal active" id="modal">
+      <!-- class에 active -->
+      <!-- modal-container -->
+      <div class="modal-container">
+        <!-- modal-wrap -->
+        <div class="modal-wrap">
+          <!-- contents-area -->
+          <!-- 이름 -->
+          <div class="contents-area">
+            <div class="title">개인정보수집 이용에 동의해 주세요.</div>
+            <div class="title-description">
+              개인정보수집 이용에 동의하셔야 다음 단계로 진행됩니다.
+            </div>
+          </div>
+          <!-- //이름 -->
+          <!-- //contents-area -->
+
+          <!-- button-area -->
+          <div class="button-area">
+            <button type="button" class="btn" onclick="closeModal('modal')">
+              닫기
+            </button>
+            <button type="button" class="btn" onclick="closeModal('modal')">
+              네, 동의할게요
+            </button>
+          </div>
+          <!-- //button-area -->
+        </div>
+        <!-- //modal-wrap -->
+      </div>
+      <!-- //modal-container -->
+    </div>
+    <!-- //modal -->
+  </body>
+</html>

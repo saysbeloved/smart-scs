@@ -112,7 +112,23 @@ h2 {
         box-shadow: 0 0 10px #c70d0d, 0 0 20px #c70d0d, 0 0 30px #c70d0d,
           0 0 40px #c70d0d, 0 0 50px #c70d0d, 0 0 60px #c70d0d, 0 0 70px #c70d0d,
           0 0 80px #c70d0d;
-        animation: lightGlow 1s linear infinite;
+        animation: light-glow 1s linear infinite;
+      }
+
+      &.temperature {
+        &::before {
+          width: 100%;
+          top: 30%;
+          left: 3%;
+          clip-path: polygon(50% 50%, 100% 48%, 100% 52%);
+          opacity: 1;
+          animation: light-line 2s linear infinite;
+        }
+        &::after {
+          $size: 2%;
+          top: calc(60% - (#{$size} / 2));
+          left: calc(53% - (#{$size} / 2));
+        }
       }
     }
   }
@@ -537,12 +553,11 @@ h2 {
 // breath-test-blow
 .breath-test {
   svg {
-    $size: 10rem; // 160px
     position: absolute;
-    top: 51%;
+    top: 50%;
     right: 12%;
-    width: $size;
-    height: $size;
+    width: 10rem;
+    height: 10.625rem;
     path {
       fill: none;
       stroke: #9dcced;

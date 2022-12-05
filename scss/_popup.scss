@@ -41,7 +41,7 @@
       width: 100%;
       min-width: 45.625rem; // 730px
       max-width: 56.25rem; // 900px
-      min-height: 26.875rem; // 430px;
+      min-height: 18.75rem; // 300px;
       border-radius: $radius-modal;
       background-color: $color-white;
       box-shadow: $box-shadow-modal;
@@ -98,6 +98,70 @@
             background-color: $color-secondary-deep;
             color: $color-light;
           }
+        }
+      }
+    }
+  }
+
+  &.toast {
+    .modal-container {
+      .modal-wrap {
+        max-width: 46.25rem; // 740px
+        .contents-area {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .result {
+      &-value {
+        @include en;
+        @include flex-column-center;
+        $size: 10rem; // 160px
+        width: $size;
+        height: $size;
+        margin-right: 0.576em; // 30px
+        border-radius: $radius-round;
+        background-color: $color-secondary;
+        color: $color-white;
+        font: {
+          size: 3.255rem; // 52.08px
+          weight: 700;
+        }
+      }
+      &-text {
+        color: $color-text-sub;
+
+        &-title {
+          color: $color-primary;
+          font: {
+            size: 2.604rem; // 41.664px
+            weight: 500;
+          }
+        }
+
+        &-sub {
+          padding-top: 0.36em; // 10px
+          font-size: 1.736rem; // 27.776px
+
+          .count-num {
+            display: inline-block;
+            width: 0.720em; // 20px
+            color: $color-important;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    &.fail {
+      .result {
+        &-value {
+          background-color: #dd4351;
+        }
+        &-text-title {
+            color: #dd4351;
         }
       }
     }
