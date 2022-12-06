@@ -251,15 +251,16 @@ h2 {
 .information-area {
   @include flex-between;
   padding-top: 2.188em; // 35px
+  $size: 11.25rem; // 180px
+  $photo-space-right: 2.188rem; // 35px
 
   .user-photo {
     @include photo-outline;
-    $size: 11.25rem; // 180px
     width: $size;
     height: $size;
     min-width: $size;
     min-height: $size;
-    margin-right: 2.188em; // 35px
+    margin-right: $photo-space-right;
     border-radius: $radius-round;
     background-color: #e6e9f0;
     img {
@@ -269,6 +270,7 @@ h2 {
 
   .information {
     @include flex-grow;
+    width: calc(100% - (#{$size} + #{$photo-space-right}));
     li {
       $space-v: 1.25em; // 20px
       display: flex;
@@ -288,23 +290,13 @@ h2 {
         font-size: 1.519rem; // 24.304px
       }
       span {
+        @include ellipsis;
         color: $color-text-title-sub;
         font-size: 1.953rem; // 31.248px
       }
     }
   }
-
-  h3 {
-    padding-top: 0.473em; // 23px
-    color: $color-text-title-sub;
-    font: {
-      size: 3.038rem; // 48.608px
-      weight: 400;
-    }
-    .user-name {
-      font-weight: 700;
-    }
-  }
+  
 }
 
 // photo - user-verify
@@ -315,7 +307,7 @@ h2 {
   height: $size; // 520px
   border-radius: $radius-default;
   background-color: #e9edf4;
-  img {
+  img, canvas, video {
     @include photo-image;
   }
 }

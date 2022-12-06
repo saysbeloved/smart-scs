@@ -7,7 +7,7 @@
   width: 100%;
   height: 100%;
   padding: $modal-space;
-  z-index: 999;
+  z-index: 10000;
 
   &.active {
     display: block;
@@ -35,134 +35,162 @@
 
   &-container {
     @include flex-center;
+  }
 
-    .modal-wrap {
-      @include flex-column;
-      width: 100%;
-      min-width: 45.625rem; // 730px
-      max-width: 56.25rem; // 900px
-      min-height: 18.75rem; // 300px;
-      border-radius: $radius-modal;
-      background-color: $color-white;
-      box-shadow: $box-shadow-modal;
-      animation: slide-in-down 0.5s ease;
-      z-index: 9999;
+  .modal-wrap {
+    @include flex-column;
+    width: 100%;
+    min-width: 45.625rem; // 730px
+    max-width: 56.25rem; // 900px
+    min-height: 16.875rem; // 270px;
+    border-radius: $radius-modal;
+    background-color: $color-white;
+    box-shadow: $box-shadow-modal;
+    animation: slide-in-down 0.5s ease;
+    z-index: 10001;
+  }
 
-      .contents-area {
-        @include flex-grow;
-        padding: 4.375em; // 70px
-        line-height: 1.4;
+  .contents-area {
+    @include flex-grow;
+    padding: 4.375em; // 70px
+    line-height: 1.4;
 
-        .title {
-          color: $color-primary;
-          font: {
-            size: 2.604rem; // 41.664px
-            weight: 700;
-          }
-          &-description {
-            padding-top: 0.9em; // 25px
-            font-size: 1.736rem; // 27.776px
-
-            &.selected-task {
-              color: $color-dark;
-              font-weight: 500;
-            }
-          }
-        }
+    .title {
+      color: $color-primary;
+      font: {
+        size: 2.604rem; // 41.664px
+        weight: 700;
       }
+      &-description {
+        padding-top: 0.9em; // 25px
+        font-size: 1.736rem; // 27.776px
 
-      .button-area {
-        @include flex-between;
-
-        .btn {
-          width: 100%;
-          height: 8.75rem; // 140px
-          border-radius: 0;
-          background-color: #e6ebf2;
-          color: #6e747d;
-          font-size: 2.604rem; // 41.664px
-
-          &:first-child {
-            border-bottom-left-radius: $radius-modal;
-          }
-          &:last-child {
-            border-bottom-right-radius: $radius-modal;
-            background-color: $color-secondary-deep;
-            color: $color-light;
-          }
-          &:only-child {
-            border: {
-              bottom-left-radius: $radius-modal;
-              bottom-right-radius: $radius-modal;
-            }
-            background-color: $color-secondary-deep;
-            color: $color-light;
-          }
+        &.selected-task {
+          color: $color-dark;
+          font-weight: 500;
         }
       }
     }
   }
 
+  .button-area {
+    @include flex-between;
+
+    .btn {
+      width: 100%;
+      height: 8.75rem; // 140px
+      border-radius: 0;
+      background-color: #e6ebf2;
+      color: #6e747d;
+      font-size: 2.604rem; // 41.664px
+
+      &:first-child {
+        border-bottom-left-radius: $radius-modal;
+      }
+      &:last-child {
+        border-bottom-right-radius: $radius-modal;
+        background-color: $color-secondary-deep;
+        color: $color-light;
+      }
+      &:only-child {
+        border: {
+          bottom-left-radius: $radius-modal;
+          bottom-right-radius: $radius-modal;
+        }
+        background-color: $color-secondary-deep;
+        color: $color-light;
+      }
+    }
+  }
+
   &.toast {
-    .modal-container {
-      .modal-wrap {
-        max-width: 46.25rem; // 740px
-        .contents-area {
-          display: flex;
-          align-items: center;
+    .modal-wrap {
+      max-width: 46.25rem; // 740px
+      .contents-area {
+        display: flex;
+        align-items: center;
+        padding: 3.500em; // 56px
+      }
+    }
+
+    .toast-text {
+      color: $color-text-sub;
+
+      &-title {
+        color: #dd4351;
+        font: {
+          size: 2.604rem; // 41.664px
+          weight: 500;
         }
       }
+
+      &-sub {
+        padding-top: 0.36em; // 10px
+        font-size: 1.736rem; // 27.776px
+
+        .count-num {
+          display: inline-block;
+          width: 0.72em; // 20px
+          color: $color-important;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .toast-icon {
+      @include flex-column-center;
+      margin-right: 0.167em; // 20px
+      color: $color-important;
+      font-size: 7.500rem; // 120px
     }
 
     .result {
       &-value {
         @include en;
         @include flex-column-center;
-        $size: 10rem; // 160px
+        $size: 11.25rem; // 180px
         width: $size;
         height: $size;
-        margin-right: 0.576em; // 30px
+        margin-right: 0.617em; // 30px
         border-radius: $radius-round;
-        background-color: $color-secondary;
+        background-color: #dd4351;
         color: $color-white;
         font: {
-          size: 3.255rem; // 52.08px
+          size: 3.038rem; // 48.608px // 3.255rem; // 52.08px
           weight: 700;
-        }
-      }
-      &-text {
-        color: $color-text-sub;
-
-        &-title {
-          color: $color-primary;
-          font: {
-            size: 2.604rem; // 41.664px
-            weight: 500;
-          }
-        }
-
-        &-sub {
-          padding-top: 0.36em; // 10px
-          font-size: 1.736rem; // 27.776px
-
-          .count-num {
-            display: inline-block;
-            width: 0.720em; // 20px
-            color: $color-important;
-            font-weight: 700;
-          }
         }
       }
     }
 
+    &.pass,
     &.fail {
+      .contents-area::before {
+        @include pseudo-before;
+        $size: 6.25rem; // 100px
+        top: -7.5rem; // 120px
+        left: calc(50% - (#{$size} / 2));
+        width: $size;
+        height: $size;
+        background: {
+          image: image-path('ico-fail-face.svg');
+          repeat: no-repeat;
+          position: 50%;
+          size: $size auto;
+        }
+      }
+    }
+
+    &.pass {
+      .contents-area::before {
+        background-image: image-path('ico-pass-face.svg');
+      }
       .result {
         &-value {
-          background-color: #dd4351;
+          background-color: $color-secondary;
         }
-        &-text-title {
-            color: #dd4351;
-        }
+      }
+      .toast-text-title {
+        color: $color-primary;
       }
     }
   }
