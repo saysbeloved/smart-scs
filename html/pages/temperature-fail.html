@@ -7,24 +7,23 @@
     <title>Smart SCS</title>
     <script src="https://unpkg.com/phosphor-icons"></script>
     <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
-    <script defer src="./../../assets/scripts/jquery-ui.min.js"></script>
     <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
     <script type="module">
-      let progress = 5;
+      let countdown = 5;
       const timer = setInterval(() => {
-        progress -= 1;
-        if (progress >= 0) updateProgress(progress);
+        countdown -= 1;
+        if (countdown >= 0) updateProgress(countdown);
       }, 1000);
 
       function updateProgress(value) {
-        // if (value == 0) {
-        //   $('.modal').hide();
-        //   return;
-        // }
-        $('#count-num').text(parseInt(value * 1));
+        if (value == 0) {
+          $('.modal').hide();
+          return;
+        }
+        $('#countdown-num').text(parseInt(value * 1));
       }
-      updateProgress(5);
+      updateProgress(countdown);
     </script>
   </head>
   <body>
@@ -93,7 +92,7 @@
             <div class="toast-text">
               <span class="toast-text-title">적정 체온이 아니에요.</span>
               <div class="toast-text-sub">
-                <span class="count-num" id="count-num">5</span>초 후 다시
+                <span class="countdown-num" id="countdown-num">5</span>초 후 다시
                 측정합니다. (<span>1</span>/3회)
               </div>
             </div>

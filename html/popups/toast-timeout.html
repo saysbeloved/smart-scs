@@ -11,10 +11,10 @@
     <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
     <script type="module">
-      let progress = 5;
+      let countdown = 5;
       const timer = setInterval(() => {
-        progress -= 1;
-        if (progress >= 0) updateProgress(progress);
+        countdown -= 1;
+        if (countdown >= 0) updateProgress(countdown);
       }, 1000);
 
       function updateProgress(value) {
@@ -22,7 +22,7 @@
         //   $('.modal').hide();
         //   return;
         // }
-        $('#count-num').text(parseInt(value * 1));
+        $('#countdown-num').text(parseInt(value * 1));
       }
       updateProgress(5);
     </script>
@@ -53,7 +53,7 @@
             <div class="toast-text">
               <span class="toast-text-title">제한 시간이 초과되었습니다.</span>
               <div class="toast-text-sub">
-                <span class="count-num" id="count-num">5</span>초 후 초기화 됩니다.
+                <span class="countdown-num" id="countdown-num">5</span>초 후 초기화 됩니다.
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@
             <div class="toast-text">
               <span class="toast-text-title">에러가 발생했습니다.</span>
               <div class="toast-text-sub">
-                <span class="count-num" id="count-num">5</span>초 후 초기화 됩니다.
+                <span class="countdown-num" id="countdown-num">5</span>초 후 초기화 됩니다.
               </div>
             </div>
           </div> -->

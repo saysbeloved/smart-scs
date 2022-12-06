@@ -2047,7 +2047,7 @@ h2 {
   padding-top: 0.36em;
   font-size: 1.736rem;
 }
-.modal.toast .toast-text-sub .count-num {
+.modal.toast .toast-text-sub .countdown-num {
   display: inline-block;
   width: 0.72em;
   color: #c70d0d;
