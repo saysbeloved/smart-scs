@@ -10,20 +10,27 @@
     <script defer src="./../../assets/scripts/jquery-ui.min.js"></script>
     <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
-    <script type="module">
+    <script>
       let progress = 30;
-      const timer = setInterval(() => {
-        progress -= 1;
-        if (progress >= 0) updateProgress(progress);
-      }, 1000);
+      let timer;
+
+      function startTimer() {
+        closeModal('modal');
+        timer = setInterval(() => {
+          progress -= 1;
+          if (progress >= 0) updateProgress(progress);
+        }, 1000);
+        updateProgress(progress);
+      }
 
       function updateProgress(value) {
+        console.log($('#timer-bar'), value);
+
         $('#timer-bar').progressbar({
           value: (value * 100) / progress,
         });
         $('#timer-num').text(parseInt(value * 1));
       }
-      updateProgress(progress);
     </script>
   </head>
   <body>
@@ -60,8 +67,8 @@
           <h2>혈압 측정</h2>
         </div>
         <div class="title-description">
-          혈압계로 가서 준비한 후 <strong>&#91;시작&#93; 버튼을 눌러</strong> 측정해
-          주세요.<br />
+          혈압계로 가서 준비한 후
+          <strong>&#91;시작&#93; 버튼을 눌러</strong> 측정해 주세요.<br />
           중간에 &#91;정지&#93; 버튼을 누르면 측정이 되지 않습니다.
         </div>
         <div class="complete-timer">
@@ -95,21 +102,22 @@
           <div class="contents-area">
             <div class="title">혈압을 측정하시겠어요?</div>
             <div class="title-description">
-              &#39;아니요&#39;를 선택하면 혈압 측정을 건너뛰고 <span class="en">QR</span>코드 발급 단계로 이동합니다.
+              &#39;아니요&#39;를 선택하면 혈압 측정을 건너뛰고
+              <span class="en">QR</span>코드 발급 단계로 이동합니다.
             </div>
           </div>
           <!-- //contents-area -->
 
           <!-- button-area -->
           <div class="button-area">
-            <button type="button" class="btn" onclick="linkPage('./result.html')">
-              아니요
-            </button>
             <button
               type="button"
               class="btn"
-              onclick="closeModal('modal')"
+              onclick="linkPage('./result.html')"
             >
+              아니요
+            </button>
+            <button type="button" class="btn" onclick="startTimer()">
               네, 측정할게요
             </button>
           </div>
