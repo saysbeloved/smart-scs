@@ -11,10 +11,10 @@
 // loader
 @keyframes rotation {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -92,10 +92,10 @@
 
 @keyframes flex-width {
   0% {
-    width: 100%;
+    width: 0;
   }
   100% {
-    width: 0;
+    width: 100%;
   }
 }
 
@@ -142,7 +142,7 @@
   0% {
     box-shadow: 0px 0 50px 50px rgba($color-white, 0.3);
     top: 50%;
-  }  
+  }
   25% {
     box-shadow: 0px 70px 140px 70px rgba($color-white, 0.4);
     top: 5%;
@@ -171,3 +171,15 @@
   }
 }
 
+// blood-heart
+@keyframes heart {
+	10% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes heart-color {
+  10% {
+    background-color: $color-tertiary;
+  }
+}

@@ -14,21 +14,6 @@ $asset-base-path: './..' !default;
   @return asset('fonts', $file);
 }
 
-// Media Query Rule
-$small: 'screen and (min-width: 960px) and (max-width: 1159.98px)';
-$medium: 'screen and (min-width: 1160px) and (max-width: 1319.98px)';
-$large: 'screen and (min-width: 1320px) and (max-width: 1919.98px)';
-$xlarge: 'screen and (min-width: 1920px)';
-
-$max-small: 'screen and (max-width: 959.98px)';
-$max-medium: 'screen and (max-width: 1159.98px)';
-$max-large: 'screen and (max-width: 1319.98px)';
-$max-xlarge: 'screen and (max-width: 1919.98px)';
-
-$min-small: 'screen and (min-width: 960px)';
-$min-large: 'screen and (min-width: 1320px)';
-$min-xlarge: 'screen and (min-width: 1920px)';
-
 // Vendor-prefix
 @mixin vendor-prefix($name, $value) {
   @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
@@ -137,6 +122,21 @@ $min-xlarge: 'screen and (min-width: 1920px)';
 }
 .en {
   letter-spacing: 0;
+}
+
+@mixin text-highlight {
+  position: relative;
+  z-index: 0;
+  &::before {
+    @include pseudo-before;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70%;
+    background-color: rgba(#c4e3f4, 0.6);
+    animation: flex-width 1s ease-in-out;
+    z-index: -1;
+  }
 }
 
 // input
@@ -682,7 +682,7 @@ table {
     border-radius: $radius-round;
     background: rgba($color: $color-primary, $alpha: 0.5);
 
-    .num {
+    &-num {
       color: $color-light;
       font: {
         size: 19.53rem; // 312.48px

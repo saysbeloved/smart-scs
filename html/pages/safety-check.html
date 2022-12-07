@@ -9,11 +9,27 @@
     <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
     <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
+    <script type="module">
+      let countdown = 3;
+      const timer = setInterval(() => {
+        countdown -= 1;
+        if (countdown >= 0) updateProgress(countdown);
+      }, 1000);
+
+      function updateProgress(value) {
+        if (value == 0) {
+          $('.dimmed-countdown').hide();
+          return;
+        }
+        $('#countdown-num').text(parseInt(value * 1));
+      }
+      updateProgress(countdown);
+    </script>
   </head>
   <body>
     <!-- header -->
     <header>
-      <button type="button" class="home" onclick="linkPage('../main.html')">
+      <button type="button" class="home" onclick="linkPage('./../main.html')">
         <i class="ph-house"><span class="hidden">Home</span></i>
       </button>
       <h1><span>Smart</span>SCS</h1>
@@ -52,16 +68,29 @@
 
       <!-- contents-area -->
       <div class="contents-area">
-          <!-- safety-check -->
-          <div class="safety-check gloves"> <!-- gloves가 있으면 장갑이 있는 경우 / 없으면 기본 -->
-            <div class="photo-box">
-              <img src="./../../assets/images/ex-photo-safety.png" alt="" />
-            </div>
+        <!-- safety-check -->
+        <div class="safety-check gloves">
+          <!-- gloves가 있으면 장갑이 있는 경우 / 없으면 기본 -->
+          <div class="photo-box">
+            <img src="./../../assets/images/ex-photo-safety.png" alt="" />
           </div>
-          <!-- //safety-check -->
         </div>
+        <!-- //safety-check -->
+      </div>
       <!-- //contents-area -->
     </section>
     <!-- //section -->
+
+    <!-- dimmed-countdown -->
+    <div class="dimmed-countdown">
+      <!-- countdown -->
+      <div class="countdown-wrap">
+        <div class="countdown">
+          <span class="countdown-num" id="countdown-num">3</span>
+        </div>
+      </div>
+      <!-- //countdown -->
+    </div>
+    <!-- //dimmed-countdown -->
   </body>
 </html>

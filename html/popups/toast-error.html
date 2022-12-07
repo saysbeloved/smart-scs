@@ -7,6 +7,7 @@
     <title>Smart SCS</title>
     <script src="https://unpkg.com/phosphor-icons"></script>
     <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="./../../assets/scripts/jquery-ui.min.js"></script>
     <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
     <script type="module">
@@ -17,10 +18,10 @@
       }, 1000);
 
       function updateProgress(value) {
-        // if (value == 0) {
-        //   $('.modal').hide();
-        //   return;
-        // }
+        if (value == 0) {
+          document.location.href = './../main.html';
+          return;
+        }
         $('#countdown-num').text(parseInt(value * 1));
       }
       updateProgress(countdown);
@@ -39,37 +40,19 @@
     </header>
     <!-- //header -->
 
-    <!-- section -->
-    <section class="step-section">
-      <!-- step-area -->
-      <div class="step-area">
-        <ol>
-          <li class="finished">정보 확인<br />작업 선택</li>
-          <li class="finished">안전 장비 검수</li>
-          <li class="active">음주 측정</li>
-          <li>체온 측정</li>
-          <li>혈압 측정</li>
-          <li>QR 발급</li>
-        </ol>
-      </div>
-      <!-- //step-area -->
-    </section>
-    <!-- //section -->
-
     <!-- modal toast -->
-    <!-- 실패는 fail / 성공은 pass 붙어요 -->
-    <div class="modal toast pass active">
+    <div class="modal toast active">
       <!-- modal-container -->
       <div class="modal-container">
         <!-- modal-wrap -->
         <div class="modal-wrap">
           <!-- contents-area -->
           <div class="contents-area">
-            <div class="result-value">0.000</div>
+            <div class="toast-icon"><i class="ph-circle-wavy-warning"></i></div>
             <div class="toast-text">
-              <div class="toast-text-title">적정 수치입니다.</div>
+              <div class="toast-text-title">에러가 발생했습니다.</div>
               <div class="toast-text-sub">
-                <span class="countdown-num" id="countdown-num">5</span>초 후 다음 단계로 이동합니다.
+                <span class="countdown-num" id="countdown-num">5</span>초 후 초기화 됩니다.
               </div>
             </div>
           </div>

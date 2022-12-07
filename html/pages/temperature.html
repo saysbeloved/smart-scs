@@ -9,11 +9,27 @@
     <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
     <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
+    <script type="module">
+      let countdown = 5;
+      const timer = setInterval(() => {
+        countdown -= 1;
+        if (countdown >= 0) updateProgress(countdown);
+      }, 1000);
+
+      function updateProgress(value) {
+        if (value == 0) {
+          $('.modal').hide();
+          return;
+        }
+        $('#countdown-num').text(parseInt(value * 1));
+      }
+      updateProgress(countdown);
+    </script>
   </head>
   <body>
     <!-- header -->
     <header>
-      <button type="button" class="home" onclick="linkPage('../main.html')">
+      <button type="button" class="home" onclick="linkPage('./../main.html')">
         <i class="ph-house"><span class="hidden">Home</span></i>
       </button>
       <h1><span>Smart</span>SCS</h1>
@@ -63,40 +79,34 @@
     </section>
     <!-- //section -->
 
-    <!-- modal -->
-    <div class="modal" id="modal">
+    <!-- modal toast -->
+    <div class="modal toast active">
       <!-- modal-container -->
       <div class="modal-container">
         <!-- modal-wrap -->
         <div class="modal-wrap">
           <!-- contents-area -->
           <div class="contents-area">
-            <div class="title">음주 측정을 생략하시겠어요?</div>
-            <div class="title-description">
-              음주 측정을 건너뛰시면 다음 단계로 진행됩니다.
+            <div class="toast-icon"><i class="ph-thermometer-simple"></i></div>
+            <div class="toast-text">
+              <div class="toast-text-sub-title"
+                >측정기 약 <span class="en">10cm</span>앞에 손목을 대 주세요.</div
+              >
+              <div class="toast-text-sub"
+                >측정기는 <strong>키오스크 우측 어디어디 어디</strong>에 있습니다.</div
+              >
+              <div class="toast-text-sub">
+                <span class="countdown-num" id="countdown-num">5</span>초 후
+                시작됩니다.
+              </div>
             </div>
           </div>
           <!-- //contents-area -->
-
-          <!-- button-area -->
-          <div class="button-area">
-            <button type="button" class="btn" onclick="closeModal('modal')">
-              아니요
-            </button>
-            <button
-              type="button"
-              class="btn"
-              onclick="linkPage('temperature.html')"
-            >
-              네, 생략할게요
-            </button>
-          </div>
-          <!-- //button-area -->
         </div>
         <!-- //modal-wrap -->
       </div>
       <!-- //modal-container -->
     </div>
-    <!-- //modal -->
+    <!-- //modal toast -->
   </body>
 </html>

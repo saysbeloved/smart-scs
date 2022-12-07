@@ -18,7 +18,7 @@
 
       function updateProgress(value) {
         if (value == 0) {
-          document.location.href='task-select.html';
+          document.location.href='blood-pressure.html';
           return;
         }
         $('#countdown-num').text(parseInt(value * 1));
@@ -29,7 +29,7 @@
   <body>
     <!-- header -->
     <header>
-      <button type="button" class="home" onclick="linkPage('../main.html')">
+      <button type="button" class="home" onclick="linkPage('./../main.html')">
         <i class="ph-house"><span class="hidden">Home</span></i>
       </button>
       <h1><span>Smart</span>SCS</h1>
@@ -79,7 +79,7 @@
     </section>
     <!-- //section -->
 
-    <!-- modal -->
+    <!-- modal toast -->
     <!-- 실패는 fail / 성공은 pass 붙어요 -->
     <div class="modal toast pass active">
       <!-- modal-container -->
@@ -90,7 +90,7 @@
           <div class="contents-area">
             <div class="result-value">36.6</div>
             <div class="toast-text">
-              <span class="toast-text-title">적정 체온입니다.</span>
+              <div class="toast-text-title">적정 체온입니다.</div>
               <div class="toast-text-sub">
                 <span class="countdown-num" id="countdown-num">5</span>초 후 다음 단계로 이동합니다.
               </div>
@@ -102,6 +102,6 @@
       </div>
       <!-- //modal-container -->
     </div>
-    <!-- //modal -->
+    <!-- //modal toast -->
   </body>
 </html>

@@ -17,10 +17,10 @@
       }, 1000);
 
       function updateProgress(value) {
-        // if (value == 0) {
-        //   $('.modal').hide();
-        //   return;
-        // }
+        if (value == 0) {
+          $('.modal').hide();
+          return;
+        }
         $('#countdown-num').text(parseInt(value * 1));
       }
       updateProgress(countdown);
@@ -46,30 +46,55 @@
         <ol>
           <li class="finished">정보 확인<br />작업 선택</li>
           <li class="finished">안전 장비 검수</li>
-          <li class="active">음주 측정</li>
-          <li>체온 측정</li>
+          <li class="finished">음주 측정</li>
+          <li class="active">체온 측정</li>
           <li>혈압 측정</li>
           <li>QR 발급</li>
         </ol>
       </div>
       <!-- //step-area -->
+
+      <!-- title-area -->
+      <div class="title-area">
+        <div class="title">
+          <h2>체온 측정</h2>
+        </div>
+        <div class="title-description">
+          측정기에 손목을 대 주세요.<br />
+          측정기와 손목의 거리는 약 10cm 정도면 적당합니다.
+        </div>
+      </div>
+      <!-- //title-area -->
+
+      <!-- contents-area -->
+      <div class="contents-area">
+        <div class="image-wrap kiosk temperature">
+          <img
+            src="./../../assets/images/img-temperature.png"
+            alt="체온 측정"
+          />
+        </div>
+      </div>
+      <!-- //contents-area -->
     </section>
     <!-- //section -->
 
     <!-- modal toast -->
-    <!-- 실패는 fail / 성공은 pass 붙어요 -->
-    <div class="modal toast pass active">
+    <div class="modal toast active">
       <!-- modal-container -->
       <div class="modal-container">
         <!-- modal-wrap -->
         <div class="modal-wrap">
           <!-- contents-area -->
           <div class="contents-area">
-            <div class="result-value">0.000</div>
+            <div class="toast-icon"><i class="ph-thermometer-simple"></i></div>
             <div class="toast-text">
-              <div class="toast-text-title">적정 수치입니다.</div>
+              <div class="toast-text-sub-title"
+                >측정기 약 <span class="en">10cm</span>앞에 손목을 대 주세요.</div
+              >
               <div class="toast-text-sub">
-                <span class="countdown-num" id="countdown-num">5</span>초 후 다음 단계로 이동합니다.
+                <span class="countdown-num" id="countdown-num">5</span>초 후
+                시작됩니다.
               </div>
             </div>
           </div>

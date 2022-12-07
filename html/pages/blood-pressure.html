@@ -7,8 +7,24 @@
     <title>Smart SCS</title>
     <script src="https://unpkg.com/phosphor-icons"></script>
     <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="./../../assets/scripts/jquery-ui.min.js"></script>
     <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
+    <script type="module">
+      let progress = 30;
+      const timer = setInterval(() => {
+        progress -= 1;
+        if (progress >= 0) updateProgress(progress);
+      }, 1000);
+
+      function updateProgress(value) {
+        $('#timer-bar').progressbar({
+          value: (value * 100) / progress,
+        });
+        $('#timer-num').text(parseInt(value * 1));
+      }
+      updateProgress(progress);
+    </script>
   </head>
   <body>
     <!-- header -->
@@ -30,9 +46,9 @@
         <ol>
           <li class="finished">정보 확인<br />작업 선택</li>
           <li class="finished">안전 장비 검수</li>
-          <li class="active">음주 측정</li>
-          <li>체온 측정</li>
-          <li>혈압 측정</li>
+          <li class="finished">음주 측정</li>
+          <li class="finished">체온 측정</li>
+          <li class="active">혈압 측정</li>
           <li>QR 발급</li>
         </ol>
       </div>
@@ -41,47 +57,28 @@
       <!-- title-area -->
       <div class="title-area">
         <div class="title">
-          <h2>음주 측정</h2>
-          <button type="button" class="btn" onclick="openModal('modal')">
-            음주 측정 건너뛰기
-          </button>
+          <h2>혈압 측정</h2>
         </div>
         <div class="title-description">
-          측정기 입구에 &#39;훅&#39;하고
-          <strong>3초간 강하게 불어 주세요.</strong><br />
-          측정기는 키오스크 우측에 있습니다.
+          혈압계로 가서 준비한 후 <strong>&#91;시작&#93; 버튼을 눌러</strong> 측정해
+          주세요.<br />
+          중간에 &#91;정지&#93; 버튼을 누르면 측정이 되지 않습니다.
+        </div>
+        <div class="complete-timer">
+          <span class="timer-num" id="timer-num">30</span>초 내에 완료해 주세요.
+          <div class="timer-bar" id="timer-bar"></div>
         </div>
       </div>
       <!-- //title-area -->
 
       <!-- contents-area -->
       <div class="contents-area">
-        <div class="image-wrap breath-test">
-          <!-- breath-test -->
+        <div class="image-wrap">
+          <div class="blood-heart"></div>
           <img
-            src="./../../assets/images/img-breath-test.png"
-            alt="음주 측정"
+            src="./../../assets/images/img-blood-pressure.png"
+            alt="체온 측정"
           />
-          <!-- breath-test-blow -->
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 600 600"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            enable-background="new 0 0 150 150"
-          >
-            <path
-              d="m31.4,193.2 h306.8 c53.6,0 97.1-40.9 97.1-91.1 s-43.5-91.1-97.1-91.1 c-53.6,0-97.1,40.9-97.1,91.1"
-            />
-            <path
-              d="m53.4,256 h400.8 c31,0 56.3,22.6 56.3,50.3 c0,27.7-25.3,50.3-56.3,50.3"
-            />
-            <path
-              d="m31.4,318.8 h306.8 c31,0 56.3,22.6 56.3,50.3 c0,27.7-25.3,50.3-56.3,50.3"
-            />
-          </svg>
-          <!-- //breath-test-blow -->
-          <!-- //breath-test -->
         </div>
       </div>
       <!-- //contents-area -->
@@ -89,31 +86,31 @@
     <!-- //section -->
 
     <!-- modal -->
-    <div class="modal" id="modal">
+    <div class="modal active" id="modal">
       <!-- modal-container -->
       <div class="modal-container">
         <!-- modal-wrap -->
         <div class="modal-wrap">
           <!-- contents-area -->
           <div class="contents-area">
-            <div class="title">음주 측정을 생략하시겠어요?</div>
+            <div class="title">혈압을 측정하시겠어요?</div>
             <div class="title-description">
-              음주 측정을 건너뛰시면 다음 단계로 진행됩니다.
+              &#39;아니요&#39;를 선택하면 혈압 측정을 건너뛰고 <span class="en">QR</span>코드 발급 단계로 이동합니다.
             </div>
           </div>
           <!-- //contents-area -->
 
           <!-- button-area -->
           <div class="button-area">
-            <button type="button" class="btn" onclick="closeModal('modal')">
+            <button type="button" class="btn" onclick="linkPage('./result.html')">
               아니요
             </button>
             <button
               type="button"
               class="btn"
-              onclick="linkPage('./temperature.html')"
+              onclick="closeModal('modal')"
             >
-              네, 생략할게요
+              네, 측정할게요
             </button>
           </div>
           <!-- //button-area -->
@@ -123,16 +120,5 @@
       <!-- //modal-container -->
     </div>
     <!-- //modal -->
-
-    <!-- dimmed -->
-    <div class="dimmed">
-      <!-- loading-indicator -->
-      <div class="loading-indicator">
-        <div class="loader"></div>
-        <div class="loader-text">결과를 <strong>분석</strong> 중이에요.</div>
-      </div>
-      <!-- //loading-indicator -->
-    </div>
-    <!-- //dimmed -->
   </body>
 </html>

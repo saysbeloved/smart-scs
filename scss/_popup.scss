@@ -109,12 +109,17 @@
       .contents-area {
         display: flex;
         align-items: center;
-        padding: 3.500em; // 56px
+        padding: 3.5em; // 56px
       }
     }
 
     .toast-text {
       color: $color-text-sub;
+      strong {
+        @include text-highlight;
+        color: $color-primary-deep;
+        font-weight: 500;
+      }
 
       &-title {
         color: #dd4351;
@@ -122,6 +127,15 @@
           size: 2.604rem; // 41.664px
           weight: 500;
         }
+      }
+
+      &-sub-title {
+        color: #dd4351;
+        font: {
+          size: 1.953rem; // 31.248px
+          weight: 500;
+        }
+        line-height: 1.2;
       }
 
       &-sub {
@@ -141,7 +155,7 @@
       @include flex-column-center;
       margin-right: 0.167em; // 20px
       color: $color-important;
-      font-size: 7.500rem; // 120px
+      font-size: 7.5rem; // 120px
     }
 
     .result {

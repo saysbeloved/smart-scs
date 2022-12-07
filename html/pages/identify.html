@@ -19,17 +19,17 @@
 
       function updateProgress(value) {
         $('#timer-bar').progressbar({
-          value: (value * 100) / 30,
+          value: (value * 100) / progress,
         });
         $('#timer-num').text(parseInt(value * 1));
       }
-      updateProgress(30);
+      updateProgress(progress);
     </script>
   </head>
   <body>
     <!-- header -->
     <header>
-      <button type="button" class="home" onclick="linkPage('../main.html')">
+      <button type="button" class="home" onclick="linkPage('./../main.html')">
         <i class="ph-house"><span class="hidden">Home</span></i>
       </button>
       <h1><span>Smart</span>SCS</h1>
