@@ -11,7 +11,9 @@
     <script defer src="./../../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../../assets/styles/style.css" />
     <script type="module">
-      let progress = 30;
+      const limit = 30;
+      let progress = limit;
+
       const timer = setInterval(() => {
         progress -= 1;
         if (progress >= 0) updateProgress(progress);
@@ -19,7 +21,7 @@
 
       function updateProgress(value) {
         $('#timer-bar').progressbar({
-          value: (value * 100) / progress,
+          value: (value * 100) / limit,
         });
         $('#timer-num').text(parseInt(value * 1));
       }

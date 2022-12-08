@@ -74,6 +74,15 @@ h2 {
   .timer-bar {
     margin-top: 0.288em; // 8px
   }
+
+  // 혈압 측정은 측정 여부 먼저 묻고 진행돼서 id로 추가
+  &#complete-timer {
+    visibility: hidden;
+
+    &.active {
+      visibility: visible;  
+    }
+  }
 }
 
 // contents-area
@@ -391,16 +400,29 @@ h2 {
 
     &::after {
       @include pseudo-before;
+      $line-color: #f3f4fa;
       width: 100%;
-      height: 0.313rem; // 5px
+      height: 40%;
+      border: {
+        width: 4px 0 0 0;
+        style: solid;
+        image: linear-gradient(
+          to right,
+          rgba($line-color, 0.5) 0%,
+          rgba($line-color, 1) 10%,
+          rgba($line-color, 1) 90%,
+          rgba($line-color, 0.5) 100%
+        );
+        image-slice: 1;
+      }
       background: linear-gradient(
-        to right,
-        rgba(#eceff8, 0.4) 0.6%,
-        rgba(#eceff8, 1),
-        rgba(#eceff8, 0.4) 99.4%
+        to bottom,
+        rgba($color-white, 0.5) 0%,
+        rgba($color-white, 0.3) 30%,
+        rgba($color-white, 0) 80%
       );
-      opacity: 0.8;
-      box-shadow: 0px 0 50px 50px rgba($color-white, 0.3);
+      opacity: 1;
+      box-sizing: border-box;
       top: 50%;
       animation: scan 4s linear infinite 3s;
       z-index: 99;

@@ -13,17 +13,17 @@
       let countdown = 5;
       const timer = setInterval(() => {
         countdown -= 1;
-        if (countdown >= 0) updateProgress(countdown);
+        if (countdown >= 0) updateCountdown(countdown);
       }, 1000);
 
-      function updateProgress(value) {
+      function updateCountdown(value) {
         // if (value == 0) {
         //   $('.modal').hide();
         //   return;
         // }
         $('#countdown-num').text(parseInt(value * 1));
       }
-      updateProgress(countdown);
+      updateCountdown(countdown);
     </script>
   </head>
   <body>
