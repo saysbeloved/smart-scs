@@ -218,7 +218,7 @@
     &-information {
       $space-h: 6.875em; // 11px
       padding: {
-        left: $space-h; 
+        left: $space-h;
         right: $space-h;
       }
       li {
@@ -239,6 +239,9 @@
           margin-right: 0.823em; // 20px
           color: $color-gray;
           font-size: 1.519rem; // 24.304px
+          &[for='user-mobile'] + span {
+            @include en;
+          }
         }
         span {
           @include ellipsis;

@@ -2426,6 +2426,9 @@ h2 {
   color: #c1c2cb;
   font-size: 1.519rem;
 }
+.modal .issued-qr-information li label[for=user-mobile] + span {
+  letter-spacing: 0;
+}
 .modal .issued-qr-information li span {
   overflow: hidden;
   white-space: nowrap;
