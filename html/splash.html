@@ -7,21 +7,18 @@
     <title>Smart SCS</title>
     <script src="https://unpkg.com/phosphor-icons"></script>
     <script defer src="./../assets/scripts/jquery-3.6.1.min.js"></script>
-    <!-- <script defer src="./../assets/scripts/script.js"></script> -->
+    <script defer src="./../assets/scripts/script.js"></script>
     <link rel="stylesheet" href="./../assets/styles/style.css" />
-    <script>
-      function openModal(id) {
-        const el = document.getElementById(id);
-        const tag = document.getElementsByTagName('section')[0];
-        el.classList.add('active');
-        tag.classList.add('paused');
-      }
-      function closeModal(id) {
-        const el = document.getElementById(id);
-        const tag = document.getElementsByTagName('section')[0];
-        el.classList.remove('active');
-        tag.classList.remove('paused');
-      }
+    <script type="module">
+      $(function () {
+        $('#modal').on('cssChanged', function () {
+          if ($('#modal').hasClass('active')) {
+            $('section.splash').addClass('paused');
+          } else {
+            $('section.splash').removeClass('paused');
+          }
+        });
+      });
     </script>
   </head>
   <body>
@@ -42,7 +39,7 @@
       </div>
       <!-- //logo-symbol-area -->
       <!-- loading-text -->
-      <div class="loader-text" onclick="openModal('modal')">
+      <div class="loader-text">
         연결된 장치를 <strong>초기화</strong>중이에요.
       </div>
       <!-- //loading-text -->
