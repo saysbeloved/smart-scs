@@ -208,6 +208,46 @@
       }
     }
   }
+  .issued-qr {
+    width: 100%;
+    height: 600px;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+    &-information {
+      $space-h: 6.875em; // 11px
+      padding: {
+        left: $space-h; 
+        right: $space-h;
+      }
+      li {
+        $space-v: 1.25em; // 20px
+        display: flex;
+        align-items: center;
+        padding: {
+          top: $space-v;
+          bottom: $space-v;
+        }
+        font-weight: 700;
+        + li {
+          border-top: 1px solid #d2d6dd;
+        }
+        label {
+          display: inline-block;
+          min-width: 4.526em; // 110px
+          margin-right: 0.823em; // 20px
+          color: $color-gray;
+          font-size: 1.519rem; // 24.304px
+        }
+        span {
+          @include ellipsis;
+          color: $color-text-title-sub;
+          font-size: 2.387rem; // 38.192px
+        }
+      }
+    }
+  }
 }
 
 // bottom-sheet

@@ -156,6 +156,24 @@
   }
 }
 
+@keyframes scan-symbol {
+  0% {
+    top: 50%;
+  }
+  25% {
+    top: 23%;
+    transform: translateY(0);
+  }
+  45% {
+    top: 35%;
+    transform: rotateX(145deg) translateY(100%);
+  }
+  70% {
+    top: 66%;
+    transform: rotateX(180deg) translateY(100%);
+  }
+}
+
 // blow
 @keyframes blow {
   0% {

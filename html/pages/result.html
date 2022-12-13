@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart SCS</title>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="./../../assets/scripts/script.js"></script>
+    <link rel="stylesheet" href="./../../assets/styles/style.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <button type="button" class="home" onclick="linkPage('./../main.html')">
+        <i class="ph-house"><span class="hidden">Home</span></i>
+      </button>
+      <h1><span>Smart</span>SCS</h1>
+      <button type="button">
+        <i class="ph-gear"><span class="hidden">Set</span></i>
+      </button>
+    </header>
+    <!-- //header -->
+
+    <!-- section -->
+    <section class="step-section">
+      <!-- step-area -->
+      <div class="step-area">
+        <ol>
+          <li class="finished">정보 확인<br />작업 선택</li>
+          <li class="finished">안전 장비 검수</li>
+          <li class="finished">음주 측정</li>
+          <li class="finished">체온 측정</li>
+          <li class="finished">혈압 측정</li>
+          <li class="active">QR 발급</li>
+        </ol>
+      </div>
+      <!-- //step-area -->
+
+      <!-- title-area -->
+      <div class="title-area">
+        <div class="title">
+          <h2>QR코드 발급</h2>
+        </div>
+        <div class="title-description">
+          점검 결과를 확인하고 버튼을 누르면 출입 QR코드가 발급됩니다.
+        </div>
+        <h3>점검 결과</h3>
+        <div class="sub-title-description">
+          <strong>미통과 항목이 있으면 작업 시작이 어려울 수 있습니다.</strong
+          ><br />현장 공무팀 담당자에게 즉시 문의해 주세요.
+        </div>
+      </div>
+      <!-- //title-area -->
+
+      <!-- contents-area -->
+      <div class="contents-area">
+        <ul class="results">
+          <li>안전모</li>
+          <li class="fail">마스크</li>
+          <li class="fail">엑스밴드</li>
+          <li>장갑</li>
+          <li>보안경</li>
+          <li class="fail">음주 측정</li>
+          <li class="fail">체온 측정</li>
+          <li>혈압 측정</li>
+        </ul>
+      </div>
+      <!-- //contents-area -->
+
+      <!-- button-area -->
+      <div class="button-area">
+        <button type="button" class="btn" onclick="openModal('modal')">
+          <span class="en">QR</span>코드를 발급 받을게요!
+        </button>
+      </div>
+      <!-- //button-area -->
+    </section>
+    <!-- //section -->
+
+    <!-- modal -->
+    <div class="modal" id="modal">
+      <!-- modal-container -->
+      <div class="modal-container">
+        <!-- modal-wrap -->
+        <div class="modal-wrap">
+          <!-- contents-area -->
+          <div class="contents-area">
+            <div class="image-wrap issued-qr">
+              <img src="./../../assets/images/ex-img-issued-qr.png" alt="출입용 QR코드">
+            </div>
+            <ul class="issued-qr-information">
+              <li>
+                <label for="user-name">이름</label>
+                <span>정우주</span>
+              </li>
+              <li>
+                <label for="user-mobile">전화번호</label>
+                <span>010-****-5678</span>
+              </li>
+            </ul>
+          </div>
+          <!-- //contents-area -->
+
+          <!-- button-area -->
+          <div class="button-area">
+            <button
+              type="button"
+              class="btn"
+              onclick="linkPage('./../main.html')"
+            >
+              완료할게요
+            </button>
+          </div>
+          <!-- //button-area -->
+        </div>
+        <!-- //modal-wrap -->
+      </div>
+      <!-- //modal-container -->
+    </div>
+    <!-- //modal -->
+  </body>
+</html>
