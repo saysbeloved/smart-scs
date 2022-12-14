@@ -646,10 +646,6 @@ table {
     &::after {
       transform: rotate(-45deg);
     }
-    // &:hover::before,
-    // &:hover::after {
-
-    // }
   }
 }
 
@@ -718,33 +714,3 @@ table {
   }
 }
 
-// error page
-.error-wrapper {
-  @include flex-center;
-  .error {
-    @include flex-column-center;
-    min-width: 57.143rem; // 800px
-    min-height: 35.714rem; // 500px
-    padding: $global-space; // 40px
-    background-color: $color-light;
-    box-shadow: $box-shadow-modal;
-    .content {
-      padding-bottom: 2.857em; // 40px
-      text-align: center;
-      .title {
-        padding-bottom: 0.667em; // 20px
-        font: {
-          family: 'Youandi';
-          size: 2.143rem; // 30px
-          weight: 700;
-        }
-      }
-      span {
-        color: $color-primary;
-      }
-    }
-    .btn.primary {
-      width: 13.333em; // 200px
-    }
-  }
-}

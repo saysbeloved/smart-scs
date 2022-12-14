@@ -526,7 +526,7 @@ h2 {
       animation: fade-in-down 0.3s ease forwards;
     }
 
-    > div {
+    > li {
       @include chip;
       position: absolute;
 
@@ -545,19 +545,15 @@ h2 {
         left: 67%;
       }
 
-      &.gloves {
+      &.glove-left,
+      &.glove-right {
         top: 68%;
+      }
+      &.glove-left {
         left: 10%;
-        &::before {
-          $space-v: 0.504em; // 14px
-          @include pseudo-before;
-          @include chip;
-          content: '장갑';
-          top: 0;
-          left: 414%;
-          width: 1.81em;
-          height: calc(2.207em - (#{$space-v} * 2));
-        }
+      }
+      &.glove-right {
+        right: 10%;
       }
 
       &:nth-child(2) {
