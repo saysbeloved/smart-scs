@@ -55,12 +55,14 @@
                   <i class="ph-smiley"><span class="hidden">완료</span></i>
                 </td>
               </tr>
-              <tr>
+              <tr onclick="openPage('./loading-indicator.html')">
                 <td class="title">Loading indicator</td>
-                <td class="date"></td>
-                <td class="state"></td>
+                <td class="date">2022-12-14</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td>
               </tr>
-              <tr onclick="openPage('countdown.html')">
+              <tr onclick="openPage('./countdown.html')">
                 <td class="title">Countdown</td>
                 <td class="date">2022-12-06</td>
                 <td class="state finished">
@@ -147,9 +149,11 @@
                 </td>
               </tr>
               <tr onclick="openPage('./pages/safety-check.html')">
-                <td class="title">안전 장비 검수 - Scanning<br /><span class="remark"
-                  >shooting 카운트다운 포함</span
-                ></td>
+                <td class="title">
+                  안전 장비 검수 - Scanning<br /><span class="remark"
+                    >shooting 카운트다운 포함</span
+                  >
+                </td>
                 <td class="date">2022-12-08</td>
                 <td class="state finished">
                   <i class="ph-smiley"><span class="hidden">완료</span></i>
@@ -162,46 +166,67 @@
                   <i class="ph-smiley"><span class="hidden">완료</span></i>
                 </td>
               </tr>
-              <tr>
+              <tr onclick="openPage('./pages/breath-test-initialize.html')">
                 <td class="title">음주 측정 - 음주 측정기 초기화 중</td>
-                <td class="date"></td>
-                <td class="state ongoing">
-                  <i class="ph-spinner-gap"
-                    ><span class="hidden">진행중</span></i
-                  >
+                <td class="date">2022-12-14</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
                 </td>
               </tr>
+              <tr onclick="openPage('./pages/breath-test.html')">
+                <td class="title">
+                  음주 측정<br /><span class="remark"
+                    >음주 측정 건너뛰기 팝업 페이지 포함</span
+                  >
+                </td>
+                <td class="date">2022-12-14</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td>
               </tr>
-              <tr>
-                <td class="title">음주 측정</td>
-                <td class="date"></td>
-                <td class="state"></td>
-              <tr>
+              <tr onclick="openPage('./pages/breath-test-analyse.html')">
                 <td class="title">음주 측정 - 결과 분석중</td>
-                <td class="date"></td>
-                <td class="state"></td>
+                <td class="date">2022-12-14</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td>
               </tr>
-              <tr>
-                <td class="title">체온 측정<br /><span class="remark"
-                  >측정 시작 타이머 팝업 포함</td>
-                <td class="date"></td>
-                <td class="state"></td>
+              <tr onclick="openPage('./pages/temperature.html')">
+                <td class="title">
+                  체온 측정<br /><span class="remark"
+                    >측정 시작 타이머 팝업 포함</span
+                  >
+                </td>
+                <td class="date">2022-12-14</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td>
               </tr>
-              <tr>
-                <td class="title">체온 측정 - 팝업에 체온 측정기 위치 정보 없는 형태<br /><span class="remark"
-                  >측정 시작 타이머 팝업 포함</td>
-                <td class="date"></td>
-                <td class="state"></td>
+              <tr onclick="openPage('./pages/temperature-not-position.html')">
+                <td class="title">
+                  체온 측정 - 팝업에 체온 측정기 위치 정보 없는 형태<br /><span
+                    class="remark"
+                    >측정 시작 타이머 팝업 포함</span
+                  >
+                </td>
+                <td class="date">2022-12-14</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td>
               </tr>
-              <tr>
+              <tr onclick="openPage('./pages/temperature-fail.html')">
                 <td class="title">체온 측정 결과 - 실패</td>
-                <td class="date"></td>
-                <td class="state"></td>
+                <td class="date">2022-12-14</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td>
               </tr>
-              <tr>
+              <tr onclick="openPage('./pages/temperature-pass.html')">
                 <td class="title">체온 측정 결과 - 성공</td>
-                <td class="date"></td>
-                <td class="state"></td>
+                <td class="date">2022-12-14</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td>
               </tr>
               <tr>
                 <td class="title">혈압 측정</td>
@@ -240,29 +265,33 @@
                 <td class="date"></td>
                 <td class="state"></td>
               </tr>
-              <tr onclick="openPage('popups/modal-name-mobile.html')">
+              <tr onclick="openPage('./popups/modal-name-mobile.html')">
                 <td class="title">이름 입력 / 휴대폰 번호 입력</td>
                 <td class="date">2022-12-06</td>
                 <td class="state finished">
                   <i class="ph-smiley"><span class="hidden">완료</span></i>
                 </td>
               </tr>
-              <tr onclick="openPage('popups/modal-terms-agree.html')">
+              <tr onclick="openPage('./popups/modal-terms-agree.html')">
                 <td class="title">개인정보수집 이용 동의</td>
                 <td class="date">2022-12-06</td>
                 <td class="state finished">
                   <i class="ph-smiley"><span class="hidden">완료</span></i>
                 </td>
               </tr>
-              <tr>
+              <tr onclick="openPage('./popups/toast-result-fail.html')">
                 <td class="title">측정 결과 - 실패</td>
-                <td class="date"></td>
-                <td class="state"></td>
+                <td class="date">2022-12-14</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td>
               </tr>
-              <tr>
+              <tr onclick="openPage('./popups/toast-result-pass.html')">
                 <td class="title">측정 결과 - 성공</td>
-                <td class="date"></td>
-                <td class="state"></td>
+                <td class="date">2022-12-14</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td>
               </tr>
               <tr>
                 <td class="title">제한 시간 초과</td>
