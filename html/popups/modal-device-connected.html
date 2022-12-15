@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart SCS</title>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script defer src="./../../assets/scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="./../../assets/scripts/script.js"></script>
+    <link rel="stylesheet" href="./../../assets/styles/style.css" />
+    <script type="module">
+      $(function () {
+        $('#modal').on('cssChanged', function () {
+          if ($('#modal').hasClass('active')) {
+            $('section.splash').addClass('paused');
+          } else {
+            $('section.splash').removeClass('paused');
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- section -->
+    <section class="splash paused">
+      <div class="logo-area">
+        <h1><span>Smart</span>SCS</h1>
+        <h2><span>Smart</span>Self Check System</h2>
+      </div>
+      <!-- logo-symbol-area -->
+      <div class="logo-symbol-area">
+        <div class="logo-symbol-box">
+          <img
+            src="./../../assets/images/logo-symbol.png"
+            alt="Smart SCS Symbol"
+          />
+        </div>
+      </div>
+      <!-- //logo-symbol-area -->
+      <!-- loading-text -->
+      <div class="loader-text">
+        연결된 장치를 <strong>초기화</strong>중이에요.
+      </div>
+      <!-- //loading-text -->
+    </section>
+
+    <!-- modal -->
+    <div class="modal active" id="modal">
+      <!-- modal-container -->
+      <div class="modal-container">
+        <!-- modal-wrap -->
+        <div class="modal-wrap">
+          <!-- contents-area -->
+          <div class="contents-area">
+            <div class="title">주변 기기 연결 상태를 확인해 주세요.</div>
+            <div class="title-description">
+              주변 기기들이 잘 연결되어 있는지 확인 후 다시 시도해 주세요.
+            </div>
+          </div>
+          <!-- //contents-area -->
+
+          <!-- button-area -->
+          <div class="button-area">
+            <button type="button" class="btn" onclick="closeModal('modal')">
+              종료
+            </button>
+            <button type="button" class="btn" onclick="closeModal('modal')">
+              다시 시도할게요
+            </button>
+          </div>
+          <!-- //button-area -->
+        </div>
+        <!-- //modal-wrap -->
+      </div>
+      <!-- //modal-container -->
+    </div>
+    <!-- //modal -->
+  </body>
+</html>

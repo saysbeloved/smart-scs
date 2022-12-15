@@ -39,10 +39,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr onclick="openPage('./splash.html')">
                 <td class="title">Splash</td>
-                <td class="date"></td>
-                <td class="state"></td>
+                <td class="date">2022-12-16</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td></span></i>
+                </td>
               </tr>
               <tr onclick="openPage('./main.html')">
                 <td class="title">
@@ -228,17 +231,27 @@
                   <i class="ph-smiley"><span class="hidden">완료</span></i>
                 </td>
               </tr>
-              <tr>
-                <td class="title">혈압 측정</td>
-                <td class="date"></td>
-                <td class="state ongoing">
-                  <i class="ph-spinner-gap"><span class="hidden">진행중</span></i>
+              <tr onclick="openPage('./pages/blood-pressure.html')">
+                <td class="title">혈압 측정<br /><span
+                  class="remark"
+                  >혈압 측정 여부 팝업 포함</span
+                ></td>
+                <td class="date">2022-12-16</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td></span></i>
                 </td>
               </tr>
-              <tr>
-                <td class="title">안전 점검 결과</td>
-                <td class="date"></td>
-                <td class="state"></td>
+              <tr onclick="openPage('./pages/result.html')">
+                <td class="title">안전 점검 결과<br /><span
+                  class="remark"
+                  >QR코드 발급 팝업 포함</span
+                ></td>
+                <td class="date">2022-12-16</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td></span></i>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -262,10 +275,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="title">Splash 기기 연결 상태 확인</td>
-                <td class="date"></td>
-                <td class="state"></td>
+              <tr onclick="openPage('./popups/modal-device-connected.html')">
+                <td class="title">Splash 기기 연결 상태 확인<br /><span
+                  class="remark"
+                  >팝업이 뜨면 스캐닝 애니메이션은 멈추도록 구현</span
+                ></td>
+                <td class="date">2022-12-16</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td></span></i>
+                </td>
               </tr>
               <tr onclick="openPage('./popups/modal-name-mobile.html')">
                 <td class="title">이름 입력 / 휴대폰 번호 입력</td>
@@ -295,20 +314,29 @@
                   <i class="ph-smiley"><span class="hidden">완료</span></i>
                 </td>
               </tr>
-              <tr>
+              <tr onclick="openPage('./popups/toast-timeout.html')">
                 <td class="title">제한 시간 초과</td>
-                <td class="date"></td>
-                <td class="state"></td>
+                <td class="date">2022-12-16</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td></span></i>
+                </td>
               </tr>
-              <tr>
+              <tr onclick="openPage('./popups/toast-error.html')">
                 <td class="title">에러 발생</td>
-                <td class="date"></td>
-                <td class="state"></td>
+                <td class="date">2022-12-16</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td></span></i>
+                </td>
               </tr>
-              <tr>
+              <tr onclick="openPage('./popups/modal-issued-qr.html')">
                 <td class="title">출입 QR코드 발급</td>
-                <td class="date"></td>
-                <td class="state"></td>
+                <td class="date">2022-12-16</td>
+                <td class="state finished">
+                  <i class="ph-smiley"><span class="hidden">완료</span></i>
+                </td></span></i>
+                </td>
               </tr>
             </tbody>
           </table>
