@@ -2337,7 +2337,7 @@ h2 {
 }
 .modal .issued-qr {
   width: 100%;
-  height: 600px;
+  height: 32rem;
 }
 .modal .issued-qr img {
   height: 100%;
@@ -2345,6 +2345,7 @@ h2 {
      object-fit: cover;
 }
 .modal .issued-qr-information {
+  margin-top: 2.5em;
   padding-left: 6.875em;
   padding-right: 6.875em;
 }
