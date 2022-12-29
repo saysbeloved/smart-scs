@@ -36,34 +36,31 @@
 
         // selectbox
         $('.language-drop .option').click(function () {
-          var val = $(this).attr('data-value'),
+          const value = $(this).attr('data-value'),
             $drop = $('.language-drop'),
-            prevActive = $('.language-drop .option.active').attr('data-value'),
-            options = $('.language-drop .option').length;
+            prevActive = $('.language-drop .option.active').attr('data-value');
+
           $drop.toggleClass('visible');
-          $drop.removeClass('withBG');
-          $(this).css('top');
-          $drop.toggleClass('opacity');
+          $drop.removeClass('selected');
           if ($drop.hasClass('visible')) {
-            setTimeout(function () {
-              $drop.addClass('withBG');
-            }, 400 + options * 100);
+            $drop.addClass('selected');
           }
-          triggerAnimation();
-          if (val !== 'placeholder' || prevActive === 'placeholder') {
+          if (value !== 'placeholder' || prevActive === 'placeholder') {
             $('.language-drop .option').removeClass('active');
             $(this).addClass('active');
           }
+          triggerAnimation();
         });
 
-        function triggerAnimation() {
-          var finalWidth = $('.language-drop').hasClass('visible') ? 18 : 12.5;                
-          $('.language-drop').css('width', '23rem');
-          setTimeout(function () {
-            $('.language-drop').css('width', finalWidth + 'rem');
-          }, 400);
-        }
       });
+
+      function triggerAnimation() {
+        const finalWidth = $('.language-drop').hasClass('visible') ? 18 : 12.5;                
+        $('.language-drop').css('width', '23rem');
+        setTimeout(function () {
+          $('.language-drop').css('width', finalWidth + 'rem');
+        }, 400);
+      }
     </script>
   </head>
   <body class="main">

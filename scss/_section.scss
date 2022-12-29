@@ -863,7 +863,7 @@ h2 {
 
           &.visible {
             // width: 24rem;
-            height: 16.7rem;
+            height: 17.5rem;
 
             &::before,
             &::after {
@@ -878,6 +878,8 @@ h2 {
 
             .option {
               display: block;
+              transform: translateZ(0);
+              opacity: 1;
 
               &.placeholder {
                 color: $color-white;
@@ -894,24 +896,11 @@ h2 {
             }
           }
 
-          &.opacity {
+          &.selected {
             .option {
-              transform: translateZ(0);
-              opacity: 1;
+              transition: background-color 0.6s;
 
-              @for $i from 0 to 10 {
-                &:nth-child(#{$i}) {
-                  transition: opacity 0.5s 0.1s * $i, transform 0.5s 0.1s * $i;
-                }
-              }
-            }
-          }
-
-          &.withBG {
-            .option {
-              transition: background-color 0.1s;
-
-              &:not(.placeholder):hover {
+              &:not(.placeholder).active {
                 background-color: rgba($color-primary, 0.2);
               }
             }

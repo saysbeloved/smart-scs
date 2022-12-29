@@ -2049,7 +2049,7 @@ h2 {
   background-image: url("./../images/ico-lang-en.png");
 }
 .main-area .main-contents .button-box-inner-wrap .language-drop.visible {
-  height: 16.7rem;
+  height: 17.5rem;
 }
 .main-area .main-contents .button-box-inner-wrap .language-drop.visible::before, .main-area .main-contents .button-box-inner-wrap .language-drop.visible::after {
   border-color: #fff;
@@ -2062,6 +2062,8 @@ h2 {
 }
 .main-area .main-contents .button-box-inner-wrap .language-drop.visible .option {
   display: block;
+  transform: translateZ(0);
+  opacity: 1;
 }
 .main-area .main-contents .button-box-inner-wrap .language-drop.visible .option.placeholder {
   color: #fff;
@@ -2071,44 +2073,10 @@ h2 {
   padding-bottom: 0.72em;
   color: #3645b1;
 }
-.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option {
-  transform: translateZ(0);
-  opacity: 1;
+.main-area .main-contents .button-box-inner-wrap .language-drop.selected .option {
+  transition: background-color 0.6s;
 }
-.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(0) {
-  transition: opacity 0.5s 0s, transform 0.5s 0s;
-}
-.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(1) {
-  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
-}
-.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(2) {
-  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
-}
-.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(3) {
-  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
-}
-.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(4) {
-  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s;
-}
-.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(5) {
-  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
-}
-.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(6) {
-  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s;
-}
-.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(7) {
-  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s;
-}
-.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(8) {
-  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s;
-}
-.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(9) {
-  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s;
-}
-.main-area .main-contents .button-box-inner-wrap .language-drop.withBG .option {
-  transition: background-color 0.1s;
-}
-.main-area .main-contents .button-box-inner-wrap .language-drop.withBG .option:not(.placeholder):hover {
+.main-area .main-contents .button-box-inner-wrap .language-drop.selected .option:not(.placeholder).active {
   background-color: rgba(54, 69, 177, 0.2);
 }
 .main-area .weather-box {
