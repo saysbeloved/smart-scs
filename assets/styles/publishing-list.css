@@ -1595,7 +1595,11 @@ h2 {
   padding-bottom: 6.125em;
   text-align: center;
 }
-.main-area .main-contents .button-box button {
+.main-area .main-contents .button-box-inner-wrap {
+  position: relative;
+  display: inline-block;
+}
+.main-area .main-contents .button-box-inner-wrap button {
   height: 2.4em;
   padding-left: 1.56em;
   padding-right: 1.56em;
@@ -1606,10 +1610,145 @@ h2 {
   font-weight: 700;
   box-shadow: 0 40px 50px 10px rgba(30, 44, 126, 0.6);
 }
-.main-area .main-contents .button-box button span {
+.main-area .main-contents .button-box-inner-wrap button span {
   padding-right: 0.192em;
   font-weight: 100;
   letter-spacing: -0.05em;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop {
+  letter-spacing: 0;
+  position: absolute;
+  top: -4.125rem;
+  right: -5.313rem;
+  width: 12.5rem;
+  height: 7.5rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: calc(7.5rem / 2);
+  border-bottom-left-radius: calc(7.5rem / 2);
+  border-bottom-right-radius: calc(7.5rem / 2);
+  background-image: url("./../images/bg-language-drop.png");
+  box-shadow: 0 0 50px 10px rgba(30, 44, 126, 0.5);
+  text-align: left;
+  transition: width 0.5s;
+  will-change: width;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop::after, .main-area .main-contents .button-box-inner-wrap .language-drop::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 3em;
+  right: 1.875em;
+  width: 0.75em;
+  height: 0.75em;
+  border: 0.2em solid #1e2c7e;
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+  transition: opacity 0.2s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop::before {
+  border-left: none;
+  border-top: none;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop::after {
+  top: 3.375em;
+  border-right: none;
+  border-bottom: none;
+  opacity: 0;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop .option {
+  padding-top: 2.256em;
+  padding-bottom: 2.256em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  color: #1e2c7e;
+  font-size: 1.302rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop .option:not(.active) {
+  display: none;
+  opacity: 0;
+  transform: translateY(-50%);
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop .option:not(.placeholder) {
+  background-image: url("./../images/ico-lang-ko.png");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 2rem 2rem;
+  background-position-x: 1.2em;
+  padding-left: 3.12em;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop .option.en {
+  background-image: url("./../images/ico-lang-en.png");
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.visible {
+  height: 16.7rem;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.visible::before, .main-area .main-contents .button-box-inner-wrap .language-drop.visible::after {
+  border-color: #fff;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.visible::before {
+  opacity: 0;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.visible::after {
+  opacity: 1;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.visible .option {
+  display: block;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.visible .option.placeholder {
+  color: #fff;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.visible .option:not(.placeholder) {
+  padding-top: 0.72em;
+  padding-bottom: 0.72em;
+  color: #3645b1;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option {
+  transform: translateZ(0);
+  opacity: 1;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(0) {
+  transition: opacity 0.5s 0s, transform 0.5s 0s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(1) {
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(2) {
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(3) {
+  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(4) {
+  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(5) {
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(6) {
+  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(7) {
+  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(8) {
+  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.opacity .option:nth-child(9) {
+  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.withBG .option {
+  transition: background-color 0.1s;
+}
+.main-area .main-contents .button-box-inner-wrap .language-drop.withBG .option:not(.placeholder):hover {
+  background-color: rgba(54, 69, 177, 0.2);
 }
 .main-area .weather-box {
   flex-basis: auto;

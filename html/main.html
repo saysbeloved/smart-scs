@@ -32,8 +32,38 @@
             header.classList.remove('default-style');
           }
         });
+        // /slick
+
+        // selectbox
+        $('.language-drop .option').click(function () {
+          var val = $(this).attr('data-value'),
+            $drop = $('.language-drop'),
+            prevActive = $('.language-drop .option.active').attr('data-value'),
+            options = $('.language-drop .option').length;
+          $drop.toggleClass('visible');
+          $drop.removeClass('withBG');
+          $(this).css('top');
+          $drop.toggleClass('opacity');
+          if ($drop.hasClass('visible')) {
+            setTimeout(function () {
+              $drop.addClass('withBG');
+            }, 400 + options * 100);
+          }
+          triggerAnimation();
+          if (val !== 'placeholder' || prevActive === 'placeholder') {
+            $('.language-drop .option').removeClass('active');
+            $(this).addClass('active');
+          }
+        });
+
+        function triggerAnimation() {
+          var finalWidth = $('.language-drop').hasClass('visible') ? 18 : 12.5;                
+          $('.language-drop').css('width', '23rem');
+          setTimeout(function () {
+            $('.language-drop').css('width', finalWidth + 'rem');
+          }, 400);
+        }
       });
-      // /slick
     </script>
   </head>
   <body class="main">
@@ -75,13 +105,22 @@
 
           <!-- button-box -->
           <div class="button-box">
-            <button
-              type="button"
-              class="btn"
-              onclick="linkPage('./pages/identify.html')"
-            >
-              <span>자가</span>안전점검
-            </button>
+            <div class="button-box-inner-wrap">
+              <button
+                type="button"
+                class="btn"
+                onclick="linkPage('./pages/identify.html')"
+              >
+                <span>자가</span>안전점검
+              </button>
+              <div class="language-drop">
+                <div class="option active placeholder" data-value="placeholder">
+                  Language
+                </div>
+                <div class="option ko" data-value="ko">한국어</div>
+                <div class="option en" data-value="en">English</div>
+              </div>
+            </div>
           </div>
           <!-- //button-box -->
         </div>
